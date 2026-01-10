@@ -1,0 +1,26 @@
+<nav>
+    <a href="#">Booking</a>
+    <ul>
+        <li>
+            <a href="#">Пошук відпочинку</a>
+        </li>
+        <li>
+            <a href="{% url 'rests' %}">Відпочинок</a>
+        </li>
+        <li>
+            <a href="#">Про нас</a>
+        </li>
+        {% if user.is_authenticated %}
+            <li>
+                <a href="#">Мої бронювання</a>
+            </li>
+            <li>
+                <a href="#">Вийти</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="#">Увійти</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
