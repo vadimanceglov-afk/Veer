@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Відпочинок</h1>
+    <h1>Наші кімнати</h1>
     {% for room in rooms%}
         <img src="{{ room.photo.url }}">
         <h3>Місця №{{ room.number }} {{ room.category }}</h3>
