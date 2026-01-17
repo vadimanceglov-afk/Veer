@@ -8,4 +8,17 @@ def rooms_list(request):
     context = {
         "rooms": rooms
     }
-    return render(request=request, template_name="places/room_list.html", context=context)
+    return render(request=request, template_name="rooms/room_list.html", context=context)
+
+def main_page(request):
+    rooms = Room.objects.all()
+    context = {
+        "rooms": rooms,
+        "start_date": "",
+        "end_date": "",
+        "min_price": "",
+        "max_price": "",
+        "capacity": "",
+    }
+
+    return render(request=request, template_name="rooms/main_page.html", context=context)
