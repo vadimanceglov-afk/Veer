@@ -2,10 +2,10 @@
     <a href="{% url 'main_page' %}">Booking</a>
     <ul>
         <li>
-            <a href="{% url 'main_page' %}">Пошук відпочинку</a>
+            <a href="{% url 'main_page' %}">Пошук номера</a>
         </li>
         <li>
-            <a href="{% url 'rests' %}">Відпочинок</a>
+            <a href="{% url 'rests' %}">Наші кімнати</a>
         </li>
         <li>
             <a href="#">Про нас</a>
@@ -20,6 +20,10 @@
         {% else %}
             <li>
                 <a href="#">Увійти</a>
+            </li>
+
+            <li>
+                <a href="#">Зарейструватись</a>
             </li>
         {% endif %}
     </ul>

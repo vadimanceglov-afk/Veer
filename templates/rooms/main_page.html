@@ -29,7 +29,7 @@
         <h3>Кімната №{{ room.number }} {{ room.category }}</h3>
         <p>Місць: {{ room.capacity }}</p>
         <p>Ціна: {{ room.price }}</p>
-        <p><a href="#">Забронювати</a></p>
+        <p><a href="{% url 'booking' %}?room_id={{ room.id }}&start_date={{ start_date }}&end_date={{ end_date}}">Забронювати</a></p>
         <hr>
     {% endfor %}
 {% endblock %}

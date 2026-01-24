@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Бронювання</h1>
+
+    <img src="{{ room.photo.url }}" style="width: 300;">
+        <h3>Кімната №{{ room.number }} {{ room.category }}</h3>
+        <p>Місць: {{ room.capacity }}</p>
+        <p>{{ room.description}}</p>
+        <p>Ціна: {{ room.price }}</p>
+        
+        <from method="POST">
+            {% csrf_token %}
+            
+            <label for="start_date">Дата заїзду</label>
+            <input type="date" name="start_date" value="{{ start_date }}" min="{% now 'Y-m-d' %}" required>
+
+            <label for="end_date">Дата виїзду</label>
+            <input type="date" name="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
+            
+            <button type="submit">Забронювати</button>
+        </from>
+
+{% endblock %}
