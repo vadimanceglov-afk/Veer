@@ -1,19 +1,19 @@
 from django.shortcuts import render
-from .models import Room, Booking
+from .models import Rest, Booking
 
 
 #функція придставлення списку всіх кімнат
-def rooms_list(request):
-    rooms = Room.objects.all()
+def rests_list(request):
+    rests = Rest.objects.all()
     context = {
-        "rooms": rooms
+        "rests": rests
     }
-    return render(request=request, template_name="rooms/room_list.html", context=context)
+    return render(request=request, template_name="rests/rests_list.html", context=context)
 
 def main_page(request):
-    rooms = Room.objects.all()
+    rests = Rest.objects.all()
     context = {
-        "rooms": rooms,
+        "rests": rests,
         "start_date": "",
         "end_date": "",
         "min_price": "",
@@ -31,17 +31,17 @@ def main_page(request):
 
         if start_date and end_date:
             #залишаємо вільні номери
-            rooms = rooms.exclude(bookings__start_time__it = end_date, booking__end_time__gt = start_date)
+            rests = rests.exclude(bookings__start_time__it = end_date, booking__end_time__gt = start_date)
             #враховуємо додаткові фільтри якщо вони вказані
             if capacity:
-                rooms = rooms.filter(capacity__gte=capacity)
+                rests = rests.filter(capacity__gte=capacity)
             if min_price:
-                rooms = rooms.filter(min_price__gte=min_price)
+                rests = rests.filter(min_price__gte=min_price)
             if max_price:
-                rooms = rooms.filter(max_price__gte=max_price)   
+                rests = rests.filter(max_price__gte=max_price)   
 
         context = {
-            "rooms": rooms,
+            "rests": rests,
             "start_date": start_date,
             "end_date": end_date,
             "min_price": min_price,
@@ -49,23 +49,23 @@ def main_page(request):
             "capacity": capacity,
         }
 
-    return render(request=request, template_name="rooms/main_page.html", context=context)
+    return render(request=request, template_name="rests/main_page.html", context=context)
 
-def book_room(request):
+def book_rest(request):
     if request.method == "GET":
-        room_id = request.GET.get("room_id")
+        rest_id = request.GET.get("rest_id")
         start_date = request.GET.get("start_date")
         end_date = request.GET.get("end_date")
 
-        room = Room.objects.get(id = room_id)
+        rest = Rest.objects.get(id = rest_id)
         context = {
-            "room": room,
+            "rest": rest,
             "start_date":start_date,
             "end_date":end_date
         }
 
 
-        return render(request=request, template_name="rooms/booking.html", context=context)
+        return render(request=request, template_name="rests/booking.html", context=context)
 
     elif request.method == "POST":
         pass

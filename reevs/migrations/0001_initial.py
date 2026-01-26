@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Room',
+            name='Rest',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('number', models.IntegerField()),
@@ -23,11 +23,11 @@ class Migration(migrations.Migration):
                 ('category', models.CharField(choices=[('econom', 'Econom'), ('standard', 'Standard'), ('luxe', 'Luxe')], max_length=100)),
                 ('description', models.TextField()),
                 ('price', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('photo', models.ImageField(upload_to='rooms')),
+                ('photo', models.ImageField(upload_to='rests')),
             ],
             options={
-                'verbose_name': 'Room',
-                'verbose_name_plural': 'Rooms',
+                'verbose_name': 'Rest',
+                'verbose_name_plural': 'Rests',
                 'ordering': ['number'],
             },
         ),
@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
                 ('start_time', models.DateTimeField()),
                 ('end_time', models.DateTimeField()),
                 ('creation_time', models.DateTimeField(auto_now_add=True)),
-                ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='bookings', to='reevs.room')),
+                ('rest', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='bookings', to='reevs.rest')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='bookings', to=settings.AUTH_USER_MODEL)),
             ],
             options={
