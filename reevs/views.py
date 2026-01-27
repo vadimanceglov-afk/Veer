@@ -10,6 +10,9 @@ def rests_list(request):
     }
     return render(request=request, template_name="rests/rests_list.html", context=context)
 
+def sef(request):
+    return render(request=request, template_name="rests/sef.html")
+
 def main_page(request):
     rests = Rest.objects.all()
     context = {
@@ -50,6 +53,7 @@ def main_page(request):
         }
 
     return render(request=request, template_name="rests/main_page.html", context=context)
+
 
 def book_rest(request):
     if request.method == "GET":
