@@ -2,17 +2,23 @@
 {% block content %}
     <form method="post" action="{% url 'main_page' %}">
         {% csrf_token %}
-        <p>
+
         <label for="start_date">Дата заїзду</label>
         <input type="date" name="start_date" value="{{ start_date }}" min="{% now 'Y-m-d' %}" required>
-        </p>
-        <p>
+
         <label for="end_date">Дата виїзду</label>
         <input type="date" name="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
-        </p>
+
 
         <label for="capacity">Кількість осіб: </label>
         <input type="number" name="capacity" value="{{ capacity }}" min="1" max="4">
+
+        <label for="capacity">Тип: </label>
+        <select name="tep">
+            <option value="active" {% if tep == "active" %}selected{% endif %}>Активний</option>
+            <option value="passive" {% if tep == "passive" %}selected{% endif %}>Пасивний</option>
+            <option value="mixed" {% if tep == "mixed" %}selected{% endif %}>Змішаний</option>
+        </select>
         
         <label for="min_price">Ціна від: </label>
         <input type="number" name="min_price" value="{{ min_price }}" placeholder="від" min="1">
@@ -26,7 +32,8 @@
     <h1>Наші кімнати</h1>
     {% for rest in rests%}
         <img src="{{ rest.photo.url }}">
-        <h3>Кімната №{{ rest.number }} {{ rest.category }}</h3>
+        <h3>Кімната №{{ rest.number }} {{ rest.category }} {{ rest.tep }}</h3>
+        <p>Тип: {{ rest.tep }}</p>
         <p>Місць: {{ rest.capacity }}</p>
         <p>Ціна: {{ rest.price }}</p>
         <p><a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date}}">Забронювати</a></p>

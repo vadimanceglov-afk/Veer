@@ -3,7 +3,8 @@
     <h1>Наші кімнати</h1>
     {% for rest in rests %}
         <img src="{{ rest.photo.url }}">
-        <h3>Кімната №{{ rest.number }} {{ rest.category }}</h3>
+        <h3>Кімната №{{ rest.number }} {{ rest.category }} </h3>
+        <p>Тип: {{ rest.tep }}</p>
         <p>Місць: {{ rest.capacity }}</p>
         <p>Ціна: {{ rest.price }} грн</p>
         <p><a href="#">Забронювати</a></p>

@@ -22,6 +22,7 @@ def main_page(request):
         "min_price": "",
         "max_price": "",
         "capacity": "",
+        "tep": "",
     }
 
     if request.method == "POST":
@@ -29,6 +30,7 @@ def main_page(request):
         start_date = request.POST.get("start_date")
         end_date = request.POST.get("end_date")
         capacity = request.POST.get("capacity")
+        tep = request.POST.get("tep")
         min_price = request.POST.get("min_price")
         max_price = request.POST.get("max_price")
 
@@ -42,6 +44,8 @@ def main_page(request):
                 rests = rests.filter(min_price__gte=min_price)
             if max_price:
                 rests = rests.filter(max_price__gte=max_price)   
+            if tep:
+                rests = rests.filter(tep = tep)
 
         context = {
             "rests": rests,
@@ -50,6 +54,7 @@ def main_page(request):
             "min_price": min_price,
             "max_price": max_price,
             "capacity": capacity,
+            "tep": tep,
         }
 
     return render(request=request, template_name="rests/main_page.html", context=context)
