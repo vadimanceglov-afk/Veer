@@ -1,0 +1,12 @@
+.center-text {
+    text-align: center;   /* по центру */
+    font-size: 48px;      /* розмір тексту */
+}
+
+.text-block {
+    padding: 20px;
+}
+
+body{
+    background-color: chartreuse;
+}

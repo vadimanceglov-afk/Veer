@@ -77,4 +77,31 @@ def book_rest(request):
         return render(request=request, template_name="rests/booking.html", context=context)
 
     elif request.method == "POST":
-        pass
+        rest_id = request.POST.get("rest_id")
+        start_date = request.POST.get("start_date")
+        end_date = request.POST.get("end_date")
+
+        rest = Rest.objects.get(id = rest_id)
+        context = {
+            "rest": rest,
+            "start_date": start_date,
+            "end_date": end_date
+        }
+
+        # перевіряємо коректність дат
+        if start_date > end_date:
+            return render(request=request, template_name="rests/booking.html", context=context)
+        
+        # перевіряємо чи цей номер уже заброньований кимось
+        if Booking.objects.filter(rest=rest, start_time__lt=end_date, end_time__gt=start_date).exists():
+            return render(request=request, template_name="rests/booking.html", context=context)
+        
+        #створюєм нове бронювання
+        booking = Booking.objects.create(
+            user = request.user,
+            rest = rest,
+            start_time = start_date,
+            end_time = end_date
+        )
+
+        return render(request=request, template_name="rests/success.html", context={"booking": booking})

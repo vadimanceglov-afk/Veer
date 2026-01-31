@@ -3,13 +3,14 @@
     <h1>Бронювання</h1>
 
     <img src="{{ rest.photo.url }}" style="width: 300;">
-        <h3>Кімната №{{ rest.number }} {{ rest.category }}</h3>
+        <h3>Кімната №{{ rest.name }} {{ rest.category }}</h3>
         <p>Місць: {{ rest.capacity }}</p>
         <p>{{ rest.description}}</p>
         <p>Ціна: {{ rest.price }}</p>
         
-        <from method="POST">
+        <form method="post">
             {% csrf_token %}
+            <input type="hidden" name="rest_id" value="{{ rest.id }}">
             
             <label for="start_date">Дата заїзду</label>
             <input type="date" name="start_date" value="{{ start_date }}" min="{% now 'Y-m-d' %}" required>
@@ -18,6 +19,6 @@
             <input type="date" name="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
             
             <button type="submit">Забронювати</button>
-        </from>
+        </form>
 
 {% endblock %}
