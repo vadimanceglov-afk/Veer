@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<br>
     <form method="post" action="{% url 'main_page' %}">
         {% csrf_token %}
 
@@ -13,8 +14,8 @@
         <label for="capacity">Кількість осіб: </label>
         <input type="number" name="capacity" value="{{ capacity }}" min="1" max="4">
 
-        <label for="capacity">Тип: </label>
-        <select name="tep">
+        <label for="tep">Тип: </label>
+        <select name="tep" id="tep">
             <option value="active" {% if tep == "active" %}selected{% endif %}>Активний</option>
             <option value="passive" {% if tep == "passive" %}selected{% endif %}>Пасивний</option>
             <option value="mixed" {% if tep == "mixed" %}selected{% endif %}>Змішаний</option>
@@ -30,13 +31,13 @@
     </form>
 
     <h1>Наші кімнати</h1>
-    {% for rest in rests%}
-        <img src="{{ rest.photo.url }}">
-        <h3>Кімната №{{ rest.number }} {{ rest.category }}</h3>
-        <p>Тип: {{ rest.tep }}</p>
-        <p>Місць: {{ rest.capacity }}</p>
-        <p>Ціна: {{ rest.price }}</p>
-        <p><a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date}}">Забронювати</a></p>
+    {% for room in rests %} {# тут rests насправді має бути queryset Room #}
+        <img src="{{ room.rest.photo.url }}">
+        <h3>Кімната №{{ room.number }} ({{ room.capacity }} місць)</h3>
+        <p>Тип: {{ room.rest.tep }}</p>
+        <p>Категорія: {{ room.rest.category }}</p>
+        <p>Ціна: {{ room.rest.price }}</p>
+        <p><a href="{% url 'booking' %}?room_id={{ room.id }}&start_date={{ start_date }}&end_date={{ end_date }}">Забронювати</a></p>
         <hr>
     {% endfor %}
 {% endblock %}
