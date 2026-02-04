@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Rest, Booking, Room
+from .models import Rest, Booking
 from django.db.models import Q
 from datetime import datetime
 
@@ -41,20 +41,18 @@ def main_page(request):
             end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
 
             # залишаємо вільні номери
-            rests = rests.exclude(
-                rooms__bookings__start_time__lt=end_date,
-                rooms__bookings__end_time__gt=start_date
-            )
+            rests = rests.exclude(bookings__start_time__lt = end_date, bookings__end_time__gt = start_date)
 
             # враховуємо додаткові фільтри якщо вони вказані
             if capacity:
-                rests = rests.filter(rooms__capacity__gte=capacity).distinct()
+                rests = rests.filter(capacity__gte=capacity)
             if min_price:
-                rests = rests.filter(price__gte=min_price)
+                rests = rests.filter(rest__price__gte=min_price)
             if max_price:
-                rests = rests.filter(price__lte=max_price)
+                rests = rests.filter(rest__price__lte=max_price)
             if tep:
-                rests = rests.filter(tep=tep)
+                rests = rests.filter(rest__tep=tep)
+
 
         context = {
             "rests": rests,
@@ -71,13 +69,14 @@ def main_page(request):
 
 def book_rest(request):
     if request.method == "GET":
-        room_id = request.GET.get("room_id")
+        rest_id = request.GET.get("room_id")
         start_date = request.GET.get("start_date")
         end_date = request.GET.get("end_date")
-        room = Room.objects.get(id=room_id)
+
+        rest = Rest.objects.get(id=rest_id)
 
         context = {
-            "room": room,
+            "rest": rest,
             "start_date": start_date,
             "end_date": end_date
         }
@@ -85,19 +84,19 @@ def book_rest(request):
         return render(request, "rests/booking.html", context)
 
     elif request.method == "POST":
-        room_id = request.POST.get("room_id")
+        rest_id = request.POST.get("rest_id")
         start_date = request.POST.get("start_date")
         end_date = request.POST.get("end_date")
         guests_count = request.POST.get("guests_count", 1)
 
-        room = Room.objects.get(id=room_id)
+        rest = Rest.objects.get(id=rest_id)
 
         # конвертуємо дати у datetime.date
         start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
         end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
 
         context = {
-            "room": room,
+            "rest": rest,
             "start_date": start_date,
             "end_date": end_date
         }
@@ -107,13 +106,13 @@ def book_rest(request):
             return render(request=request, template_name="rests/booking.html", context=context)
         
         # перевіряємо чи цей номер уже заброньований кимось
-        if Booking.objects.filter(room=room, start_time__lt=end_date, end_time__gt=start_date).exists():
+        if Booking.objects.filter(rest=rest, start_time__lt=end_date, end_time__gt=start_date).exists():
             return render(request=request, template_name="rests/booking.html", context=context)
 
         # створюємо нове бронювання
         booking = Booking.objects.create(
             user=request.user,
-            room=room,
+            rest=rest,
             start_time=start_date,
             end_time=end_date,
             guests_count=guests_count

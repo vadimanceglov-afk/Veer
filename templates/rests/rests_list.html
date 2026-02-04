@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Наші кімнати</h1>
-    {% for room in rooms %}
+    {% for rest in rests %}
         <img src="{{ rest.photo.url }}">
-        <h3>Кімната №{{ room.rest.number }} {{ room.category }} </h3>
-        <p>Тип: {{ room.rest.tep }}</p>
-        <p>Місць: {{ room.rest.capacity }}</p>
-        <p>Ціна: {{ room.rest.price }} грн</p>
+        <h3>Кімната №{{ rest.name }} {{ rest.category }} </h3>
+        <p>Тип: {{ rest.tep }}</p>
+        <p>Ціна: {{ rest.price }} грн</p>
         <p><a href="#">Забронювати</a></p>
         <hr>
     {% endfor %}

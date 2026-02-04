@@ -3,15 +3,14 @@
 <br>
     <h1>Бронювання</h1>
 
-    <img src="{{ room.rest.photo.url }}" style="width: 300;">
-    <h3>Кімната №{{ room.number }} ({{ room.category }})</h3>
-    <p>Місць: {{ room.capacity }}</p>
-    <p>{{ room.description }}</p>
-    <p>Ціна: {{ room.price }} грн.</p>
+    <img src="{{ rest.photo.url }}" style="width: 300;">
+    <h3>Кімната №{{ rest.name }} ({{ rest.category }})</h3>
+    <p>{{rest.description }}</p>
+    <p>Ціна: {{ rest.price }} грн.</p>
 
     <form method="POST">
         {% csrf_token %}
-        <input type="hidden" name="room_id" value="{{ room.id }}">
+        <input type="hidden" name="rest_id" value="{{ rest.id }}">
 
         <label for="start_date">Дата заїзду:</label>
         <input type="date" name="start_date" id="start_date" value="{{ start_date }}" min="{% now 'Y-m-d' %}" required>

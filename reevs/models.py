@@ -25,37 +25,26 @@ class Rest(models.Model):
         return f"{self.name} ({self.category}, {self.tep})"
 
     class Meta:
-        verbose_name = "reevs_room"
-        verbose_name_plural = "Rests"
+        verbose_name = "rest"
+        verbose_name_plural = "rests"
         ordering = ["name"]
 
 
-class Room(models.Model):
-    rest = models.ForeignKey(Rest, on_delete=models.CASCADE, related_name="rooms")
-    number = models.PositiveIntegerField()
-    capacity = models.PositiveIntegerField()# скільки людей може одночасно відпочивати
-    total_rooms = models.PositiveIntegerField()
 
-    def __str__(self):
-        return f"{self.rest.name} - {self.number} ({self.capacity})"
-    
-    class Meta:
-        verbose_name = "rooms"
-        verbose_name_plural = "rooms"
 
 #Приклад: модель "бронювання"
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookings")
-    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="bookings")
+    rest = models.ForeignKey(Rest, on_delete=models.CASCADE, related_name="bookings")
     start_time = models.DateField()
     end_time = models.DateField()
     guests_count = models.PositiveIntegerField(default=1) #
     creation_time = models.DateTimeField(auto_now_add=True) #
 
     def __str__(self):
-        return f"{self.user.username} - {self.room.rest.name} (Room {self.room.number})"
+        return f"{self.user.username} - {self.rest}"
     
     class Meta:
         verbose_name = "Booking"
-        verbose_name_plural = "Bokings"
+        verbose_name_plural = "Bookings"
         ordering = ["start_time"]

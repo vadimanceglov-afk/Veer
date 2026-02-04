@@ -10,10 +10,6 @@
         <label for="end_date">Дата виїзду</label>
         <input type="date" name="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
 
-
-        <label for="capacity">Кількість осіб: </label>
-        <input type="number" name="capacity" value="{{ capacity }}" min="1" max="4">
-
         <label for="tep">Тип: </label>
         <select name="tep" id="tep">
             <option value="active" {% if tep == "active" %}selected{% endif %}>Активний</option>
@@ -31,13 +27,14 @@
     </form>
 
     <h1>Наші кімнати</h1>
-    {% for room in rests %} {# тут rests насправді має бути queryset Room #}
-        <img src="{{ room.rest.photo.url }}">
-        <h3>Кімната №{{ room.number }} ({{ room.capacity }} місць)</h3>
-        <p>Тип: {{ room.rest.tep }}</p>
-        <p>Категорія: {{ room.rest.category }}</p>
-        <p>Ціна: {{ room.rest.price }}</p>
-        <p><a href="{% url 'booking' %}?room_id={{ room.id }}&start_date={{ start_date }}&end_date={{ end_date }}">Забронювати</a></p>
+    {% for rest in rests %}
+        <img src="{{ rest.photo.url }}">
+        <h3>Відпочинок {{ rest.name }} </h3>
+        <p>Тип: {{ rest.tep }}</p>
+        <p>Категорія: {{ rest.category }}</p>
+        <p>Ціна: {{ rest.price }}</p>
+        <p><a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date }}">Забронювати</a></p>
         <hr>
     {% endfor %}
+    
 {% endblock %}
