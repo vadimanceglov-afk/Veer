@@ -1,58 +1,94 @@
 {% extends 'base.html' %}
+
+{% load static %}
 {% block content %}
 
     <div class="square">
         <h1>Про нас</h1>
         <p>
-            Вітаю на моєму сайті бронювання відпочинку
-        </p>
-    </div>
-    <p class="center-text">
-        Вітаю на моєму сайті бронювання відпочинку.
-    </p>
-
-    <div class="dropdown-menu p-4 text-body-secondary" style="max-width: 200px;">
-        <p>
-          Some example text that’s free-flowing within the dropdown menu.
-        </p>
-        <p class="mb-0">
-          And this is more example text.
+            Вітаю на моєму сайті бронювання відпочинку!
         </p>
     </div>
 
-    <p class="text-block">
+
+
+
+    <p>
         На цьому сайті ви можете підібрати місце для відпочинку відповідно до вашого бюджету та вподобань, 
         а також обрати зручні дати, ціну та кількість осіб.
     </p>
+<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="Slide 1">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/0.jpg' %}" class="d-block w-100" alt="Slide 2">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="Slide 3">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
     <p>
         Особливістю і гордістю цього проєкту  є поділ відпочинку за типами, який був реалізований мною як експеремент 
         для зручнішого пошуку та вибору місць відпочинку.
     </p>
-    <div class="card border-dark mb-3" style="max-width: 18rem;">
-        <div class="card">
-            <div class="card-body">
-                <p>
-                    <strong>Активний відпочинок</strong> - орієнтований на людей, які віддають перевагу руху, 
+
+<div class="d-flex flex-wrap justify-content-center gap-3">
+    <div class="card shadow-sm rounded-4 overflow-hidden" style="width: 20rem;">
+    <img src="{% static 'img/1.jpg' %}" class="card-img-top card-img-fixed" alt="">
+    <div class="card-body">
+                <h5 class="card-title">Активний відпочинок</h5>
+                <p class="card-text">
+                    орієнтований на людей, які віддають перевагу руху, 
                     подорожам, екскурсіям, 
                     походам та іншим видам активної діяльності. 
                     Такі місця підходять для тих, хто хоче поєднати відпустку з новими враженнями та фізичною активністю.
                 </p>
             </div>
         </div>
-    </div>
-    <p>
-        <strong>Пасивний відпочинок</strong> - призначений для спокійного проведення часу, відновлення сил і релаксу. 
-        До цього типу належать місця, де основний акцент зроблений на комфорті, тиші, природі або SPA-процедурах.
-    </p>
-    <p>
-        <strong>Змішаний відпочинок</strong> - поєднує елементи активного та пасивного форматів. 
-        Він підходить для людей, які хочуть чергувати активні заняття зі спокійним відпочинком і отримати 
-        максимально збалансовану відпустку.
-    </p>
+    
+    <div class="card shadow-sm rounded-4 overflow-hidden" style="width: 20rem;">
+    <img src="{% static 'img/0.jpg' %}" class="card-img-top card-img-fixed" alt="">
+    <div class="card-body">
+        <h5 class="card-title">Пасивний відпочинок</h5>
+        <p class="card-text">
+                    призначений для спокійного проведення часу, відновлення сил і релаксу. 
+                    До цього типу належать місця, де основний акцент зроблений на комфорті, тиші, природі або SPA-процедурах.
+                </p>
+            </div>
+        </div>
+
+  <div class="card shadow-sm rounded-4 overflow-hidden" style="width: 20rem;">
+    <img src="{% static 'img/0.jpg' %}" class="card-img-top card-img-fixed" alt="">
+    <div class="card-body">
+        <h5 class="card-title">Змішаний</h5>
+        <p class="card-text">
+                    поєднує елементи активного та пасивного форматів. 
+                    Він підходить для людей, які хочуть чергувати активні заняття зі спокійним відпочинком і отримати 
+                    максимально збалансовану відпустку.
+                </p>
+            </div>
+        </div>
+    
+</div>
+
+
+
     <p class="center-text">Сайт зробив імя і фаміл</p>
     <p class="center-text">Для створення цього проєкту були використані:</p>
     <p>перелік що використав</p>
 
 
-    
+
+
 {% endblock %}

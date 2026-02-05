@@ -23,27 +23,7 @@ p {
     font-weight: bold;
 }
 
-.square {
-    width: 100%;                  
-    height: 250px;                 /* трохи вища шапка */
-    background-color: #4CAF50;    
-    color: white;                  
-    display: flex;
-    flex-direction: column;         /* елементи ставимо вертикально */
-    justify-content: center;        /* вертикальний центр всього блоку */
-    align-items: center;            /* горизонтальний центр */
-    text-align: center;             /* текст всередині по центру */
-}
 
-.square h1 {
-    font-size: 48px;
-    margin-bottom: 10px;            /* відступ між заголовком і текстом */
-}
-
-.square p {
-    font-size: 20px;
-    margin: 0;                       /* прибираємо стандартний відступ p */
-}
 
 
 /* робимо body флекс-контейнером */
@@ -82,11 +62,29 @@ footer {
     font-weight: bold;
 }
 
-.card {
-    border-radius: 10px;
-}
+
 
 .card-title {
     font-weight: bold;
     font-size: 1.25rem;
+}
+
+.card-img-fixed {
+    height: 200px;          /* однакова висота */
+    object-fit: contain;   /* НЕ обрізає і НЕ тягне */
+    background-color: #f5f5f5; /* фон щоб не було пусто */
+}
+
+.card {
+    max-width: 340px;
+}
+
+.c-item {
+    height: 480px;
+}
+
+.c-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
 }
