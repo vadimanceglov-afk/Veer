@@ -9,86 +9,334 @@
             Вітаю на моєму сайті бронювання відпочинку!
         </p>
     </div>
+<div class="section section-accent text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Про нас</h1>
+        <p class="lead mt-3">
+            Вітаю на моєму сайті бронювання відпочинку!
+        </p>
+    </div>
+</div>
 
+<div class="hero-about text-white text-center d-flex align-items-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Про нас</h1>
+        <p class="lead mt-3">
+            Сервіс бронювання відпочинку, створений для зручного та швидкого вибору
+        </p>
+    </div>
+</div>
 
-
-
-    <p>
+<br>
+    <p class="center-text">
         На цьому сайті ви можете підібрати місце для відпочинку відповідно до вашого бюджету та вподобань, 
         а також обрати зручні дати, ціну та кількість осіб.
     </p>
-<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <p class="center-text">
+        Є великий асортемент відпочинку
+    </p>
+
+
+<style>
+    .carousel-item{
+        height: 35rem;
+    }
+</style>
+<br>
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="Slide 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
     </div>
     <div class="carousel-item">
       <img src="{% static 'img/0.jpg' %}" class="d-block w-100" alt="Slide 2">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
     </div>
     <div class="carousel-item">
       <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="Slide 3">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-    <p>
-        Особливістю і гордістю цього проєкту  є поділ відпочинку за типами, який був реалізований мною як експеремент 
+<br>
+<br>
+
+    <p class="center-text">
+        Особливістю і гордістю цього проєкту  це тип відпочинку, який був реалізований мною як експеремент 
         для зручнішого пошуку та вибору місць відпочинку.
     </p>
 
-<div class="d-flex flex-wrap justify-content-center gap-3">
-    <div class="card shadow-sm rounded-4 overflow-hidden" style="width: 20rem;">
-    <img src="{% static 'img/1.jpg' %}" class="card-img-top card-img-fixed" alt="">
-    <div class="card-body">
-                <h5 class="card-title">Активний відпочинок</h5>
-                <p class="card-text">
-                    орієнтований на людей, які віддають перевагу руху, 
-                    подорожам, екскурсіям, 
-                    походам та іншим видам активної діяльності. 
-                    Такі місця підходять для тих, хто хоче поєднати відпустку з новими враженнями та фізичною активністю.
-                </p>
-            </div>
-        </div>
-    
-    <div class="card shadow-sm rounded-4 overflow-hidden" style="width: 20rem;">
-    <img src="{% static 'img/0.jpg' %}" class="card-img-top card-img-fixed" alt="">
-    <div class="card-body">
-        <h5 class="card-title">Пасивний відпочинок</h5>
-        <p class="card-text">
-                    призначений для спокійного проведення часу, відновлення сил і релаксу. 
-                    До цього типу належать місця, де основний акцент зроблений на комфорті, тиші, природі або SPA-процедурах.
-                </p>
+    <p class="center-text">
+        Ділиться він на три типи:
+    </p>
+
+<div class="container my-5">
+    <div class="row g-4 justify-content-center">
+
+        <div class="col-md-4 d-flex">
+            <div class="card shadow-sm rounded-4 overflow-hidden w-100">
+                <img src="{% static 'img/1.jpg' %}" class="card-img-top card-img-fixed" alt="">
+                <div class="card-body">
+                    <h5 class="card-title pp">Активний відпочинок</h5>
+                    <p class="card-text pp">
+                        орієнтований на людей, які віддають перевагу руху,
+                        подорожам, екскурсіям, походам та іншим видам активної діяльності.
+                    </p>
+                </div>
             </div>
         </div>
 
-  <div class="card shadow-sm rounded-4 overflow-hidden" style="width: 20rem;">
-    <img src="{% static 'img/0.jpg' %}" class="card-img-top card-img-fixed" alt="">
-    <div class="card-body">
-        <h5 class="card-title">Змішаний</h5>
-        <p class="card-text">
-                    поєднує елементи активного та пасивного форматів. 
-                    Він підходить для людей, які хочуть чергувати активні заняття зі спокійним відпочинком і отримати 
-                    максимально збалансовану відпустку.
-                </p>
+        <div class="col-md-4 d-flex">
+            <div class="card shadow-sm rounded-4 overflow-hidden w-100">
+                <img src="{% static 'img/0.jpg' %}" class="card-img-top card-img-fixed" alt="">
+                <div class="card-body">
+                    <h5 class="card-title pp">Пасивний відпочинок</h5>
+                    <p class="card-text pp">
+                        призначений для спокійного проведення часу,
+                        відновлення сил і релаксу.
+                    </p>
+                </div>
             </div>
         </div>
-    
+
+        <div class="col-md-4 d-flex">
+            <div class="card shadow-sm rounded-4 overflow-hidden w-100">
+                <img src="{% static 'img/0.jpg' %}" class="card-img-top card-img-fixed" alt="">
+                <div class="card-body">
+                    <h5 class="card-title pp">Змішаний</h5>
+                    <p class="card-text pp">
+                        поєднує активний та пасивний відпочинок
+                        для максимально збалансованої відпустки.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 
-
-    <p class="center-text">Сайт зробив імя і фаміл</p>
+    <p class="center-text">якись текст з кнопкою (придумати що за текст з кнопкою)</p>
+    <br>
+    <br>
+    <p class="center-text">Сайт зробив</p>
+    <div class="container my-5">
+    <div class="row g-4 justify-content-center">
+    <div class="card border-dark mb-3" style="width: 18rem;">
+    <img src="{% static 'img/m0.jpg' %}" class="card-img-top" alt="m0">
+  <div class="card-body">
+    <p class="center-text">Янчеглов Вадим</p>
+  </div>
+    </div>
+    </div>
+</div>
     <p class="center-text">Для створення цього проєкту були використані:</p>
     <p>перелік що використав</p>
 
 
+<!-- Стилі для секцій -->
+<style>
+.section {
+    padding: 5rem 0;
+}
+
+.section-light {
+    background-color: #ffffff;
+}
+
+.section-gray {
+    background-color: #f8f9fa;
+}
+
+.section-accent {
+    background: linear-gradient(135deg, #018317, #10f245);
+    color: white;
+}
+
+.section-accent .text-muted {
+    color: rgba(255,255,255,.8) !important;
+}
+
+.card-img-fixed {
+    height: 200px;
+    object-fit: cover;
+}
+
+.pp {
+    font-size: 0.95rem;
+}
+
+.carousel-item {
+    height: 35rem;
+}
+
+.center-text {
+    text-align: center;
+}
+</style>
+
+<!-- HERO -->
+<div class="section section-accent text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Про нас</h1>
+        <p class="lead mt-3">
+            Вітаю на моєму сайті бронювання відпочинку!
+        </p>
+    </div>
+</div>
+
+<!-- Опис сайту -->
+<div class="section section-light">
+    <div class="container text-center">
+        <p class="fs-5 text-muted">
+            На цьому сайті ви можете підібрати місце для відпочинку
+            відповідно до вашого бюджету, вподобань та зручних дат.
+        </p>
+        <p class="fs-5 text-muted">
+            Є великий асортимент відпочинку для будь-якого смаку.
+        </p>
+    </div>
+</div>
+
+<!-- Карусель -->
+<div class="section section-gray">
+    <div class="container">
+        <div id="carouselExampleCaptions" class="carousel slide shadow rounded-4 overflow-hidden">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="Slide 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/0.jpg' %}" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="Slide 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Типи відпочинку -->
+<div class="section section-light">
+    <div class="container text-center mb-5">
+        <h2 class="fw-bold">Типи відпочинку</h2>
+        <p class="text-muted">Оберіть формат, який підходить саме вам</p>
+    </div>
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 d-flex">
+                <div class="card shadow-sm rounded-4 overflow-hidden w-100">
+                    <img src="{% static 'img/1.jpg' %}" class="card-img-top card-img-fixed" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title pp">Активний відпочинок</h5>
+                        <p class="card-text pp">
+                            Подорожі, екскурсії, походи та інші активності.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card shadow-sm rounded-4 overflow-hidden w-100">
+                    <img src="{% static 'img/0.jpg' %}" class="card-img-top card-img-fixed" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title pp">Пасивний відпочинок</h5>
+                        <p class="card-text pp">
+                            Тиша, комфорт, SPA та релакс.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card shadow-sm rounded-4 overflow-hidden w-100">
+                    <img src="{% static 'img/0.jpg' %}" class="card-img-top card-img-fixed" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title pp">Змішаний</h5>
+                        <p class="card-text pp">
+                            Баланс активності та спокою для максимальної відпустки.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="section section-accent text-center">
+    <div class="container">
+        <h2 class="fw-bold mb-3">Готові почати подорож?</h2>
+        <p class="mb-4">
+            Перегляньте доступні варіанти та знайдіть ідеальний відпочинок
+        </p>
+        <a href="{% url 'main_page' %}" class="btn btn-light btn-lg px-5">До пропозицій</a>
+    </div>
+</div>
+
+<!-- Автор -->
+<div class="section section-gray text-center">
+    <div class="container">
+        <p class="fw-semibold">Проєкт створив</p>
+        <div class="d-flex justify-content-center">
+            <div class="card shadow-sm" style="width: 18rem;">
+                <img src="{% static 'img/m0.jpg' %}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h6 class="mb-0">Янчеглов Вадим</h6>
+                    <small class="text-muted">Full-stack developer</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
+
