@@ -3,12 +3,6 @@
 {% load static %}
 {% block content %}
 
-    <div class="square">
-        <h1>Про нас</h1>
-        <p>
-            Вітаю на моєму сайті бронювання відпочинку!
-        </p>
-    </div>
 <div class="section section-accent text-center">
     <div class="container">
         <h1 class="display-4 fw-bold">Про нас</h1>
@@ -18,20 +12,16 @@
     </div>
 </div>
 
-<div class="hero-about text-white text-center d-flex align-items-center">
-    <div class="container">
-        <h1 class="display-4 fw-bold">Про нас</h1>
-        <p class="lead mt-3">
-            Сервіс бронювання відпочинку, створений для зручного та швидкого вибору
-        </p>
-    </div>
-</div>
+
 
 <br>
     <p class="center-text">
         На цьому сайті ви можете підібрати місце для відпочинку відповідно до вашого бюджету та вподобань, 
+    </p>
+    <p class="center-text">
         а також обрати зручні дати, ціну та кількість осіб.
     </p>
+    <br>
     <p class="center-text">
         Є великий асортемент відпочинку
     </p>
@@ -140,6 +130,16 @@
 
 
     <p class="center-text">якись текст з кнопкою (придумати що за текст з кнопкою)</p>
+
+<div class="section section-accent text-center">
+    <div class="container">
+        <h2 class="fw-bold mb-3">Готові почати подорож?</h2>
+        <p class="mb-4">
+            Перегляньте доступні варіанти та знайдіть ідеальний відпочинок
+        </p>
+        <a href="{% url 'main_page' %}" class="btn btn-light btn-lg px-5">До пропозицій</a>
+    </div>
+</div>
     <br>
     <br>
     <p class="center-text">Сайт зробив</p>
@@ -172,7 +172,7 @@
 }
 
 .section-accent {
-    background: linear-gradient(135deg, #018317, #10f245);
+    background:#08a72d;
     color: white;
 }
 

@@ -53,7 +53,7 @@ footer {
 .square {
     width: 100%;
     min-height: 250px;
-    background-color: #4CAF50;
+    background:#08a72d;
     color: white;
     display: flex;
     flex-direction: column;
