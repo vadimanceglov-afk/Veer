@@ -1,25 +1,47 @@
-<header class="p-4 text-bg-dark"> 
-    <div class="container d-flex justify-content-between align-items-center"> 
-
+{% load static %}
+<header class="p-4 col"> 
+    <div class="container"> 
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"> 
         
-        <div class="d-flex align-items-center gap-3">
+        <a href="/">
+            <img src="{% static 'img/d1.png' %}" alt="Фото шапки" width="60" height="60" >
+        </a>
+
+        <div class="d-flex align-items-center gap-3 ui">
             <a href="{% url 'main_page' %}" class="nav-link px-2 text-white">Booking</a>
         </div>
-        <div class="d-flex align-items-center gap-3">
-            <a href="{% url 'main_page' %}" class="nav-link px-2 text-white">Пошук номера</a>
-            <a href="{% url 'rests' %}" class="nav-link px-2 text-white">Наші кімнати</a>
-            <a href="{% url 'sef' %}" class="nav-link px-2 text-white">Про нас</a>
-        </div>
-        <div class="d-flex justify-content-end gap-3">
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
+            <li>
+                <a href="{% url 'main_page' %}" class="nav-link px-2 text-white ">
+                    <i class="bi bi-search me-2"></i>Пошук Відпочинку</a>
+                </li>
+            <li>
+                <a href="{% url 'rests' %}" class="nav-link px-2 text-white">Відпочинок</a>
+            </li>
+            <li>
+                <a href="{% url 'sef' %}" class="nav-link px-2 text-white">Про нас</a>
+            </li>
+        </ul>
+
+
             {% if user.is_authenticated %}
+            <div class="text-end">
                 <a href="#" class="nav-link px-2 text-white">Мої бронювання</a>
-                <a href="{% url 'logout' %}" class="nav-link px-2 text-white">Вийти</a>
+            </div>
+            <div class="text-end">
+                <a href="{% url 'logout' %}" class="btn-g me-3">
+                   Вийти <i class="bi bi-box-arrow-right"></i></a>
+
+            </div>
             {% else %}
-                <a href="{% url 'login' %}" class="nav-link px-2 text-white">Увійти</a>
-                <a href="{% url 'register' %}" class="nav-link px-2 text-white">Зарейструватись</a>
+            <div class="text-end"> 
+                <a href="{% url 'login' %}" class="btn btn-ou me-2">Увійти</a>
+                <a href="{% url 'register' %}" class="btn btn-ouu">Зарейструватись</a>
+            </div>
             {% endif %}
+        
         </div>
     </div> 
 </header>
-
 
