@@ -1,28 +1,41 @@
+{% load static %}
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> 
         <div class="col-md-4 d-flex align-items-center"> 
-            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap"> 
-                <svg class="bi" width="30" height="24" aria-hidden="true"><use xlink:href="#bootstrap">
 
-                </use>
-            </svg> 
-        </a> 
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                <img src="{% static 'img/d0.png' %}" alt="Logo" width="60" height="60" >
+                <div>
+                    <span class="fw-semibold">RestBooking</span>
+                </div>
+            </div>
+        
         <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span> 
     </div> 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex"> 
-            <li class="ms-3">
-                <a class="text-body-secondary" href="#" aria-label="Instagram">
-                    <svg class="bi" width="24" height="24" aria-hidden="true">
-                        <use xlink:href="#instagram"></use>
-                    </svg>
+            <div class="col-md-4 text-center text-md-end">
+                <span class="fw-semibold">RestBooking</span>
+                <a href="#" class="text-muted me-3 fs-5">
+                    <i class="bi bi-github"></i>
                 </a>
-            </li> 
-        <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Facebook">
-            <svg class="bi" width="24" height="24">
-                <use xlink:href="#facebook">
+            </div>
+</footer>
 
-                </use>
-            </svg>
+
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-decoration-none lh-1">
+            <img src="{% static 'img/d0.png' %}" alt="Logo" width="40">
         </a>
-        </li> 
-    </ul> 
+        <span class="mb-3 mb-md-0 text-body-secondary">
+            © 2025 Company, Inc
+        </span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3">
+            <a class="text-body-secondary" href="https://github.com">
+                <i class="bi bi-github fs-4"></i>
+            </a>
+        </li>
+    </ul>
 </footer>

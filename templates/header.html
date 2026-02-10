@@ -8,26 +8,29 @@
         </a>
 
         <div class="d-flex align-items-center gap-3 ui">
-            <a href="{% url 'main_page' %}" class="nav-link px-2 text-white">Booking</a>
+            <a href="{% url 'main_page' %}" class="nav-link px-2 text-white">Booking Rest</a>
         </div>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
             <li>
-                <a href="{% url 'main_page' %}" class="nav-link px-2 text-white ">
+                <a href="{% url 'main_page' %}" class="nav-link px-2 text-white me-2">
                     <i class="bi bi-search me-2"></i>Пошук Відпочинку</a>
                 </li>
             <li>
-                <a href="{% url 'rests' %}" class="nav-link px-2 text-white">Відпочинок</a>
+                <a href="{% url 'rests' %}" class="nav-link px-2 text-white me-2">
+                    <i class="bi bi-asterisk me-2"></i>Відпочинок</a>
             </li>
             <li>
-                <a href="{% url 'sef' %}" class="nav-link px-2 text-white">Про нас</a>
+                <a href="{% url 'sef' %}" class="nav-link px-2 text-white">
+                    <i class="bi bi-bookmark-fill me-2"></i>Про нас</a>
             </li>
         </ul>
 
 
             {% if user.is_authenticated %}
             <div class="text-end">
-                <a href="#" class="nav-link px-2 text-white">Мої бронювання</a>
+                <a href="#" class="nav-link px-2 text-white me-2">
+                    <i class="bi bi-person-fill me-2"></i>Мої бронювання</a>
             </div>
             <div class="text-end">
                 <a href="{% url 'logout' %}" class="btn-g me-3">
