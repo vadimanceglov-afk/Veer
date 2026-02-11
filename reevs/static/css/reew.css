@@ -1,0 +1,9 @@
+.login-card{
+    width:420px;
+    border:none;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+    padding:30px;
+    background:white;
+    text-align:center;
+}
