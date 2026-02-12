@@ -1,9 +1,48 @@
-.login-card{
-    width:420px;
-    border:none;
-    border-radius:20px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.2);
-    padding:30px;
-    background:white;
-    text-align:center;
+.button-t {
+    background-color: #2A9652;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 8px 160px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.button-t:hover {
+    background-color: #237d45;
+}
+
+.button-t1 {
+    background-color: #2A9652;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 8px 100px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.button-t1:hover {
+    background-color: #237d45;
+}
+
+.bac{
+    background-color: rgba(255,255,255,.8) !important;
+}
+
+.logo-box{
+    margin-top:10px;
+}
+
+.registration-card {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    background: white;
 }

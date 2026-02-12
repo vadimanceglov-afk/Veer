@@ -1,9 +1,62 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<h1>Вхід в акаунт</h1>
-<form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Зарейструватись</button>
-</form>
+<div class="bac d-flex flex-column align-items-center justify-content-center ">
+    <div class="text-center mb-4 mb-3">
+        <a href="/">
+            <img src="{% static 'img/d0.png' %}" alt="Logo" width="150">
+        </a>
+    </div>
+    <div class="card shadow p-4 text-center registration-card ">
+        <h1>Вхід в акаунт</h1>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="submit button-t1">Зарейструватись</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="bac d-flex flex-column align-items-center justify-content-center vh-100">
+    <div class="text-center mb-3">
+        <a href="/">
+            <img src="{% static 'img/d0.png' %}" alt="Logo" width="150">
+        </a>
+    </div>
+
+    <div class="card shadow p-4 text-center registration-card" style="width:100%; max-width:480px; border-radius:15px;">
+        <h2 class="mb-4 fw-bold">Реєстрація</h2>
+
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+
+            <!-- Username -->
+            <div class="form-floating mb-3">
+                {{ form.username }}
+                <label for="{{ form.username.id_for_label }}">Логін</label>
+            </div>
+
+            <!-- Email -->
+            <div class="form-floating mb-3">
+                {{ form.email }}
+                <label for="{{ form.email.id_for_label }}">Email</label>
+            </div>
+
+            <!-- Password1 -->
+            <div class="form-floating mb-3">
+                {{ form.password1 }}
+                <label for="{{ form.password1.id_for_label }}">Пароль</label>
+            </div>
+
+            <!-- Password2 -->
+            <div class="form-floating mb-3">
+                {{ form.password2 }}
+                <label for="{{ form.password2.id_for_label }}">Підтвердження пароля</label>
+            </div>
+
+            <button class="submit button-t1 mt-3 w-100">Зареєструватись</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

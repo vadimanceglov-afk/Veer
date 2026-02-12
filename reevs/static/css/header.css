@@ -101,9 +101,7 @@ header {
     cursor: pointer;
 }
 
-.btn-ouu:hover,
-.btn-ouu:active,
-.btn-ouu:focus {
+.btn-ouu:hover{
     background-color: white;
     color: #2A9652;
     text-decoration: none;
