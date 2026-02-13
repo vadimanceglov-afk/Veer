@@ -27,7 +27,7 @@ header {
     background-color: #2A9652;
 }
 
-/* Клас для твоєї кнопки, яку ти назвав btn-g */
+
 .btn-g {
     display: inline-block;
     padding: 6px 14px;
@@ -38,72 +38,53 @@ header {
     font-weight: 500;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
-.btn-g:hover,
-.btn-g:active,
-.btn-g:focus {
-    background-color: white;
+
+.btn-g:hover {
+    background-color: rgba(245, 245, 245, 0.9);
     color: #2A9652;
-    text-decoration: none;
 }
+
+
+
+
+
 
 .btn-ou {
-    display: inline-block;
-    padding: 6px 14px;
-    font-weight: 500;
-
-    color: #f8f9fa;
-    background-color: transparent;
-    border: 1px solid #f8f9fa;
-    border-radius: 0.375rem;
-
-    text-decoration: none;
-    cursor: pointer;
-
-    transition:
-        color .15s ease-in-out,
-        background-color .15s ease-in-out,
-        border-color .15s ease-in-out,
-        box-shadow .15s ease-in-out;
+  background-color: #2A9652;
+  border: 1px solid white;
+  border-radius: 0.375rem;
+  color: white;
+  padding: 6px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
-/* hover */
 .btn-ou:hover {
-    color: #212529;
-    background-color: #f8f9fa;
-    border-color: #f8f9fa;
-    text-decoration: none;
-}
-
-/* focus */
-.btn-ou:focus {
-    outline: 0;
-    box-shadow: 0 0 0 .25rem rgba(248,249,250,.25);
-}
-
-/* active */
-.btn-ou:active {
-    color: #212529;
-    background-color: #f8f9fa;
-    border-color: #f8f9fa;
+  background-color: white; 
+  color: #2A9652;
 }
 
 .btn-ouu {
-    display: inline-block;
-    padding: 6px 14px;
-    font-weight: 500;
     background-color: white;
-    color: #2A9652;
-    border-radius: 8px;
-    text-decoration: none;
     border: none;
+    border-radius: 8px;
+    color: #2A9652;
+    padding: 6px 14px;
+    text-align: center;
+    font-weight: 500;
     cursor: pointer;
 }
 
 .btn-ouu:hover{
-    background-color: white;
+    background-color: rgba(245, 245, 245, 0.9);
     color: #2A9652;
-    text-decoration: none;
 }
 

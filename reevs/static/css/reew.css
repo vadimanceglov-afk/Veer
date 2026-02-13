@@ -42,7 +42,12 @@
 
 .registration-card {
     width: 100%;
-    max-width: 800px;
+    max-width: 420px;
     border-radius: 20px;
     background: white;
+}
+
+.divider{
+    border-top: 1px solid black;  /* товщина і колір лінії */
+    margin: 1.5rem 0;             /* відступ зверху і знизу */
 }

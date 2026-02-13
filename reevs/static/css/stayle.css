@@ -111,3 +111,38 @@ footer {
         url("/static/img/1.jpg") center/cover no-repeat;
 }
 
+.back{
+    background-color: #2A9652;
+    color: white;
+}
+
+.carousel-item{
+    height: 35rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-1 {
+    padding: 6rem 0;
+}
+
+.btn-light-custom {
+    background-color: #ffffff; /* білий фон */
+    color: #2A9652; /* зелений текст */
+    border: 2px solid #2A9652; /* зелена рамка */
+    border-radius: 12px; /* округлі кути */
+    padding: 12px 30px; /* вертикальні та горизонтальні відступи */
+    font-size: 18px; /* великий шрифт */
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-light-custom:hover {
+    background-color: rgba(245, 245, 245, 0.9); /* при наведенні фон зелений */
+    color: #2A9652; /* текст стає білим */
+    border-color: #2A9652; /* рамка теж зелена */
+}

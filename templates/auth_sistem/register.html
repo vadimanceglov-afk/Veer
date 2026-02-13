@@ -2,60 +2,38 @@
 {% load static %}
 {% block content %}
 <div class="bac d-flex flex-column align-items-center justify-content-center ">
-    <div class="text-center mb-4 mb-3">
+    <div class="text-center mb-2">
         <a href="/">
             <img src="{% static 'img/d0.png' %}" alt="Logo" width="150">
         </a>
     </div>
-    <div class="card shadow p-4 text-center registration-card ">
-        <h1>Вхід в акаунт</h1>
+    <div class="card shadow p-5 text-center registration-card" style="width:100%; max-width:480px; border-radius:20px; background-color:#ffffff;">
+        <h2 class="mb-4 fw-bold" style="color:#2A9652;">Реєстрація</h2>
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button class="submit button-t1">Зарейструватись</button>
-        </form>
-    </div>
-</div>
-
-
-<div class="bac d-flex flex-column align-items-center justify-content-center vh-100">
-    <div class="text-center mb-3">
-        <a href="/">
-            <img src="{% static 'img/d0.png' %}" alt="Logo" width="150">
-        </a>
-    </div>
-
-    <div class="card shadow p-4 text-center registration-card" style="width:100%; max-width:480px; border-radius:15px;">
-        <h2 class="mb-4 fw-bold">Реєстрація</h2>
-
-        <form method="post" action="{% url 'register' %}">
-            {% csrf_token %}
-
-            <!-- Username -->
-            <div class="form-floating mb-3">
-                {{ form.username }}
-                <label for="{{ form.username.id_for_label }}">Логін</label>
+            <div class="mb-3 text-start">
+                <label for="username" class="form-label fw-semibold">Логін</label>
+                <input type="text" class="form-control" id="username" placeholder="">
+            </div>
+            <div class="mb-3 text-start">
+                <label for="password1" class="form-label fw-semibold">Пароль</label>
+                <input type="password" class="form-control" id="password1" placeholder="">
             </div>
 
-            <!-- Email -->
-            <div class="form-floating mb-3">
-                {{ form.email }}
-                <label for="{{ form.email.id_for_label }}">Email</label>
+            <div class="mb-3 text-start">
+                <label for="password2" class="form-label fw-semibold">Підтвердження пароля</label>
+                <input type="password" class="form-control" id="password2" placeholder="">
+            </div>
+            <div class="form-check mb-4 text-start">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                    Я згоден з умовами
+                </label>
             </div>
 
-            <!-- Password1 -->
-            <div class="form-floating mb-3">
-                {{ form.password1 }}
-                <label for="{{ form.password1.id_for_label }}">Пароль</label>
-            </div>
+            <hr class="divider-line">
 
-            <!-- Password2 -->
-            <div class="form-floating mb-3">
-                {{ form.password2 }}
-                <label for="{{ form.password2.id_for_label }}">Підтвердження пароля</label>
-            </div>
-
-            <button class="submit button-t1 mt-3 w-100">Зареєструватись</button>
+            <button class="submit mt-2 button-t1 w-100">Зарейструватись</button>
         </form>
     </div>
 </div>

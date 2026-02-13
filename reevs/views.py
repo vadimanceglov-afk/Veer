@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Rest, Booking
 from django.db.models import Q
 from datetime import datetime
+from django.http import HttpResponse
 
 # функція придставлення списку всіх кімнат
 def rests_list(request):
@@ -47,11 +48,11 @@ def main_page(request):
             if capacity:
                 rests = rests.filter(capacity__gte=capacity)
             if min_price:
-                rests = rests.filter(rest__price__gte=min_price)
+                rests = rests.filter(price__gte=min_price)
             if max_price:
-                rests = rests.filter(rest__price__lte=max_price)
+                rests = rests.filter(price__lte=max_price)
             if tep:
-                rests = rests.filter(rest__tep=tep)
+                rests = rests.filter(tep=tep)
 
 
         context = {
@@ -68,8 +69,9 @@ def main_page(request):
 
 
 def book_rest(request):
+
     if request.method == "GET":
-        rest_id = request.GET.get("room_id")
+        rest_id = request.GET.get("rest_id")
         start_date = request.GET.get("start_date")
         end_date = request.GET.get("end_date")
 
@@ -119,3 +121,7 @@ def book_rest(request):
         )
 
         return render(request=request, template_name="rests/success.html", context={"booking": booking})
+
+
+def bt(request):
+    return HttpResponse("Це тимчасова сторінка")
