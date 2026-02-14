@@ -33,7 +33,7 @@
 }
 
 .bac{
-    background-color: rgba(255,255,255,.8) !important;
+    background-color: #f8f9fa;
 }
 
 .logo-box{
@@ -50,4 +50,10 @@
 .divider{
     border-top: 1px solid black;  /* товщина і колір лінії */
     margin: 1.5rem 0;             /* відступ зверху і знизу */
+}
+
+.cardf{
+    width:100%; max-width:480px; 
+    border-radius:20px; 
+    background-color:#ffffff;
 }

@@ -88,3 +88,10 @@ header {
     color: #2A9652;
 }
 
+.text-col{
+    color: white;
+}
+
+.text-col:hover{
+    color: rgba(199, 198, 198, 0.9);
+}

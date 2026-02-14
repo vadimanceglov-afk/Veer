@@ -1,40 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="bac d-flex flex-column align-items-center justify-content-center ">
-    <div class="text-center mb-2">
-        <a href="/">
-            <img src="{% static 'img/d0.png' %}" alt="Logo" width="150">
-        </a>
-    </div>
-    <div class="card shadow p-5 text-center registration-card" style="width:100%; max-width:480px; border-radius:20px; background-color:#ffffff;">
-        <h2 class="mb-4 fw-bold" style="color:#2A9652;">Реєстрація</h2>
-        <form method="post" action="{% url 'login' %}">
-            {% csrf_token %}
-            <div class="mb-3 text-start">
-                <label for="username" class="form-label fw-semibold">Логін</label>
-                <input type="text" class="form-control" id="username" placeholder="">
-            </div>
-            <div class="mb-3 text-start">
-                <label for="password1" class="form-label fw-semibold">Пароль</label>
-                <input type="password" class="form-control" id="password1" placeholder="">
-            </div>
+<div class="section section-gray text-center">
+    <div class="bac d-flex flex-column align-items-center justify-content-center ">
+        <div class="text-center mb-1">
+            <a href="/">
+                <img src="{% static 'img/d0.png' %}" alt="Logo" width="150">
+            </a>
+        </div>
+        <div class="card shadow p-5 text-center registration-card cardf">
+            <h2 class="mb-4 fw-bold" style="color:#2A9652;">Реєстрація</h2>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="mb-3 text-start">
+                    <label for="username" class="form-label fw-semibold">Ім'я</label>
+                    <input type="text" class="form-control" id="username" placeholder="">
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="password1" class="form-label fw-semibold">Пароль</label>
+                    <input type="password" class="form-control" id="password1" placeholder="">
+                </div>
 
-            <div class="mb-3 text-start">
-                <label for="password2" class="form-label fw-semibold">Підтвердження пароля</label>
-                <input type="password" class="form-control" id="password2" placeholder="">
-            </div>
-            <div class="form-check mb-4 text-start">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Я згоден з умовами
-                </label>
-            </div>
+                <div class="mb-3 text-start">
+                    <label for="password2" class="form-label fw-semibold">Підтвердження пароля</label>
+                    <input type="password" class="form-control" id="password2" placeholder="">
+                </div>
+                <div class="form-check mb-4 text-start">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Я люблю чай
+                        <i class="bi bi-cup-hot-fill"></i>
+                    </label>
+                </div>
 
-            <hr class="divider-line">
+                <hr class="divider">
 
-            <button class="submit mt-2 button-t1 w-100">Зарейструватись</button>
-        </form>
+                <button class="submit mt-2 button-t1 w-100">Зарейструватись</button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}

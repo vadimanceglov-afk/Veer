@@ -146,3 +146,12 @@ footer {
     color: #2A9652; /* текст стає білим */
     border-color: #2A9652; /* рамка теж зелена */
 }
+
+.divider1{
+    border-top: 1px solid black;  /* товщина і колір лінії */
+    margin: 1.5rem 0;             /* відступ зверху і знизу */
+}
+
+.section-gray {
+    background-color: #f8f9fa;
+}

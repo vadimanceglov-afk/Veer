@@ -1,42 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<div class="section section-gray text-center">
+    <div class="bac d-flex flex-column align-items-center justify-content-center ">
+        <div class="text-center mb-1">
+            <a href="/">
+                <img src="{% static 'img/d0.png' %}" alt="Logo" width="150">
+            </a>
+        </div>
+        <div class="card shadow p-4 text-center " style="width:100%; max-width:420px; border-radius:15px;">
+            <h2 class="mb-4 fw-bold">Вхід в акаунт</h2>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
 
-<div class="bac d-flex flex-column align-items-center justify-content-center ">
-    <div class="text-center mb-2">
-        <a href="/">
-            <img src="{% static 'img/d0.png' %}" alt="Logo" width="150">
-        </a>
-    </div>
-    <div class="card shadow p-4 text-center " style="width:100%; max-width:420px; border-radius:15px;">
-
-<h2 class="mb-4 fw-bold">Вхід в акаунт</h2>
-        <form method="post" action="{% url 'login' %}">
-            {% csrf_token %}
-
-            <!-- username -->
-            <div class="form-floating mb-3">
-                {{ form.username }}
-                <label>Ім'я користувача</label>
-            </div>
-
-            <!-- password -->
-            <div class="form-floating mb-3">
-                {{ form.password }}
-                <label>Пароль</label>
-            </div>
-
+                <!-- username -->
+                <div class="form-floating mb-3">
+                    {{ form.username }}
+                    <label>Ім'я користувача</label>
+                </div>
+                <!-- password -->
+                <div class="form-floating mb-3">
+                    {{ form.password }}
+                    <label>Пароль</label>
+                </div>
                 <button class="submit button-t ">Увійти</button>
             </form>
-            <p>Якщо у вас ще не має акаунта будь ласка 
-                <a href="{% url 'register' %}" class="fw-semibold text-decoration-none"> 
-                    зареєструйтесь
-                </a>
-            </p>
-
+                <p>Якщо у вас ще не має акаунта будь ласка 
+                    <a href="{% url 'register' %}" class="fw-semibold text-decoration-none"> 
+                        зареєструйтесь
+                    </a>
+                </p>
+        </div>
     </div>
 </div>
-
 
 
 {% endblock %}
