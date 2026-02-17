@@ -5,27 +5,6 @@
     font-size: 20px;       
 }
 
-.pp{
-    font-size: 20px;    
-}
-
-.box {
-    width: 220px;
-    height: 220px;
-    background-color: #f2f2f2;
-    border-radius: 10px;       /* закруглення */
-    border: 2px solid #333;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 26px;
-    font-weight: bold;
-}
-
-
-
 
 /* робимо body флекс-контейнером */
 body {
@@ -40,27 +19,11 @@ main {
     flex: 1;                 /* розтягується, щоб footer був внизу */
 }
 
-/* footer стилі (можна кастомізувати) */
+/* footer стилі*/
 footer {
     color: white;
     padding: 20px;
     text-align: center;
-}
-
-
-
-
-.square {
-    width: 100%;
-    min-height: 250px;
-    background:#08a72d;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-weight: bold;
 }
 
 
@@ -70,45 +33,15 @@ footer {
     font-size: 1.25rem;
 }
 
-.card-img-fixed {
-    height: 200px;          /* однакова висота */
-    object-fit: contain;   /* НЕ обрізає і НЕ тягне */
-    background-color: #f5f5f5; /* фон щоб не було пусто */
-}
 
 .card {
     max-width: 340px;
-}
-
-.c-item {
-    height: 480px;
-}
-
-.c-img {
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6);
-}
-
-.carousel-item {
-    height: 450px; /* можеш змінити: 400–500 */
 }
 
 .carousel-item img {
     height: 100%;
     object-fit: cover;
     filter: brightness(0.6);
-}
-
-.text-justify {
-    text-align: justify;
-}
-
-.hero-about {
-    min-height: 50vh;
-    background:
-        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-        url("/static/img/1.jpg") center/cover no-repeat;
 }
 
 .back{
@@ -147,11 +80,32 @@ footer {
     border-color: #2A9652; /* рамка теж зелена */
 }
 
-.divider1{
-    border-top: 1px solid black;  /* товщина і колір лінії */
-    margin: 1.5rem 0;             /* відступ зверху і знизу */
-}
-
 .section-gray {
     background-color: #f8f9fa;
+}
+
+.section-light {
+    background-color: #ffffff;
+}
+
+.section-accent {
+    background:#08a72d;
+    color: white;
+}
+
+.section-accent .text-muted {
+    color: rgba(255,255,255,.8) !important;
+}
+
+.card-img-fixed {
+    height: 200px;
+    object-fit: cover;
+}
+
+.pp {
+    font-size: 0.95rem;
+}
+
+.carousel-item {
+    height: 35rem;
 }

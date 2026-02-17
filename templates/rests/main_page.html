@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<br>
+<div class="hk">
     <form method="post" action="{% url 'main_page' %}">
         {% csrf_token %}
 
@@ -10,13 +10,15 @@
         <label for="end_date">Дата виїзду</label>
         <input type="date" name="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
 
-        <label for="tep">Тип: </label>
-        <select name="tep" id="tep">
-            <option value="active" {% if tep == "active" %}selected{% endif %}>Активний</option>
-            <option value="passive" {% if tep == "passive" %}selected{% endif %}>Пасивний</option>
-            <option value="mixed" {% if tep == "mixed" %}selected{% endif %}>Змішаний</option>
-        </select>
-        
+        <div class="field">
+            <label>Тип</label>
+            <select name="tep">
+                <option value="active">Активний</option>
+                <option value="passive">Пасивний</option>
+                <option value="mixed">Змішаний</option>
+            </select>
+        </div>
+
         <label for="min_price">Ціна від: </label>
         <input type="number" name="min_price" value="{{ min_price }}" placeholder="від" min="1">
         
@@ -25,8 +27,10 @@
 
         <button type="submit">Фільтрувати</button>
     </form>
+</div>
 
-    <h1>Наші кімнати</h1>
+<div class="pt">
+    <h1>Знайдіть Відпочинок для себе</h1>
     {% for rest in rests %}
         <img src="{{ rest.photo.url }}">
         <h3>Відпочинок {{ rest.name }} </h3>
@@ -36,5 +40,7 @@
         <p><a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date }}">Забронювати</a></p>
         <hr>
     {% endfor %}
-    
+</div>
+
+
 {% endblock %}

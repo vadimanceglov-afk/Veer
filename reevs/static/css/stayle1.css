@@ -1,0 +1,43 @@
+.pt {
+    padding: 2%;
+}
+
+.hk {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.filter-row{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+align-items:end;
+}
+
+.field{
+display:flex;
+flex-direction:column;
+font-size:14px;
+}
+
+.field input,
+.field select{
+padding:8px 10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.filter-btn{
+padding:10px 25px;
+border:none;
+border-radius:10px;
+background:#2A9652;
+color:white;
+cursor:pointer;
+}
+
+.filter-btn:hover{
+background:#237a44;
+}

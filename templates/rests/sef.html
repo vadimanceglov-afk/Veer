@@ -28,45 +28,49 @@
     <p class="center-text">
         Є великий асортемент відпочинку
     </p>
-
 <br>
-<div id="carouselExampleCaptions" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{% static 'img/p0.jpg' %}" class="d-block w-100" alt="Slide 1">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>mixed</h5>
-        <p>falkensteiner resort punta skala</p>
-      </div>
+
+<div class="section section-gray">
+    <div class="container my-5">
+        <div id="carouselExampleCaptions" class="carousel slide rounded-4 overflow-hidden shadow">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'img/p0.jpg' %}" class="d-block w-100" alt="Slide 1">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>mixed</h5>
+                <p>falkensteiner resort punta skala</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'img/p1.jpg' %}" class="d-block w-100" alt="Slide 2">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>active</h5>
+                <p>centara grand mirage </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'img/p2.jpg' %}" class="d-block w-100" alt="Slide 3">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>passive</h5>
+                <p>four seasons bora bora</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="{% static 'img/p1.jpg' %}" class="d-block w-100" alt="Slide 2">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>active</h5>
-        <p>centara grand mirage </p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'img/p2.jpg' %}" class="d-block w-100" alt="Slide 3">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>passive</h5>
-        <p>four seasons bora bora</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
 <br>
 <br>
@@ -144,8 +148,9 @@
         <a href="{% url 'main_page' %}" class="btn btn-light-custom px-5">Зарейструватися</a>
     </div>
 </div>
+
 <div class="section section-gray text-center">
-    <p class="center-text">Сайт зробив</p>
+    <p class="center-text fw-bold">Сайт зробив</p>
         <div class="d-flex justify-content-center">
             <div class="card shadow-sm" style="width: 18rem;">
                 <img src="{% static 'img/m0.jpg' %}" class="card-img-top" alt="">
@@ -155,6 +160,7 @@
             </div>
         </div>
     <p class="center-text">Для створення цього проєкту були використані:</p>
+
     <p>Django</p>
     <p>Bootstrap</p>
     <p>Phyton</p>
@@ -164,144 +170,8 @@
     <p>Figma</p>
     <p>Chat Gpt</p>
     <p>GitHub</p>
-</div>
-
-<!-- Стилі для секцій -->
-<style>
-
-.section-light {
-    background-color: #ffffff;
-}
-
-.section-accent {
-    background:#08a72d;
-    color: white;
-}
-
-.section-accent .text-muted {
-    color: rgba(255,255,255,.8) !important;
-}
-
-.card-img-fixed {
-    height: 200px;
-    object-fit: cover;
-}
-
-.pp {
-    font-size: 0.95rem;
-}
-
-.carousel-item {
-    height: 35rem;
-}
-
-.center-text {
-    text-align: center;
-}
-</style>
 
 
-<!-- Опис сайту -->
-<div class="section section-light">
-    <div class="container text-center">
-        <p class="fs-5 text-muted">
-            На цьому сайті ви можете підібрати місце для відпочинку
-            відповідно до вашого бюджету, вподобань та зручних дат.
-        </p>
-        <p class="fs-5 text-muted">
-            Є великий асортимент відпочинку для будь-якого смаку.
-        </p>
-    </div>
-</div>
-
-<!-- Карусель -->
-<div class="section section-gray">
-    <div class="container">
-        <div id="carouselExampleCaptions" class="carousel slide shadow rounded-4 overflow-hidden">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="Slide 1">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'img/0.jpg' %}" class="d-block w-100" alt="Slide 2">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="Slide 3">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- Типи відпочинку -->
-<div class="section section-light">
-    <div class="container text-center mb-5">
-        <h2 class="fw-bold">Типи відпочинку</h2>
-        <p class="text-muted">Оберіть формат, який підходить саме вам</p>
-    </div>
-    <div class="container">
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-4 d-flex">
-                <div class="card shadow-sm rounded-4 overflow-hidden w-100">
-                    <img src="{% static 'img/1.jpg' %}" class="card-img-top card-img-fixed" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="card-title pp">Активний відпочинок</h5>
-                        <p class="card-text pp">
-                            Подорожі, екскурсії, походи та інші активності.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex">
-                <div class="card shadow-sm rounded-4 overflow-hidden w-100">
-                    <img src="{% static 'img/0.jpg' %}" class="card-img-top card-img-fixed" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="card-title pp">Пасивний відпочинок</h5>
-                        <p class="card-text pp">
-                            Тиша, комфорт, SPA та релакс.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex">
-                <div class="card shadow-sm rounded-4 overflow-hidden w-100">
-                    <img src="{% static 'img/0.jpg' %}" class="card-img-top card-img-fixed" alt="">
-                    <div class="card-body text-center">
-                        <h5 class="card-title pp">Змішаний</h5>
-                        <p class="card-text pp">
-                            Баланс активності та спокою для максимальної відпустки.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 {% endblock %}
-
