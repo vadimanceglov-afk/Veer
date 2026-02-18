@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+
+{% load static %}
 {% block content %}
 <div class="hk">
     <form method="post" action="{% url 'main_page' %}">
@@ -10,37 +12,48 @@
         <label for="end_date">Дата виїзду</label>
         <input type="date" name="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
 
-        <div class="field">
-            <label>Тип</label>
-            <select name="tep">
-                <option value="active">Активний</option>
-                <option value="passive">Пасивний</option>
-                <option value="mixed">Змішаний</option>
-            </select>
-        </div>
-
         <label for="min_price">Ціна від: </label>
         <input type="number" name="min_price" value="{{ min_price }}" placeholder="від" min="1">
         
         <label for="max_price">Ціна до: </label>
         <input type="number" name="max_price" value="{{ max_price }}" placeholder="до" min="1">
 
-        <button type="submit">Фільтрувати</button>
+            <label>Тип</label>
+            <select name="tep">
+                <option value="active">Активний</option>
+                <option value="passive">Пасивний</option>
+                <option value="mixed">Змішаний</option>
+            </select>
+
+        <button type="submit" class="button-tt">Фільтрувати</button>
     </form>
 </div>
 
-<div class="pt">
-    <h1>Знайдіть Відпочинок для себе</h1>
-    {% for rest in rests %}
-        <img src="{{ rest.photo.url }}">
-        <h3>Відпочинок {{ rest.name }} </h3>
-        <p>Тип: {{ rest.tep }}</p>
-        <p>Категорія: {{ rest.category }}</p>
-        <p>Ціна: {{ rest.price }}</p>
-        <p><a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date }}">Забронювати</a></p>
-        <hr>
-    {% endfor %}
+<div class="card" style="width: 18rem;">
+  <img src="{% static 'img/1.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
 </div>
+
+
+<h1>Знайдіть Відпочинок для себе</h1>
+{% for rest in rests %} 
+        <div> 
+            <img src="{{ rest.photo.url }}"> 
+        </div> 
+                <h3>{{ rest.name }} </h3> 
+                <p class="card-text">Тип: {{ rest.tep }}</p> 
+                <p class="card-text">Категорія: {{ rest.category }}</p> 
+                <p class="card-text">Ціна: {{ rest.price }}</p> 
+                <p class="card-text">
+                    <a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date }}">Забронювати</a>
+                </p> 
+
+{% endfor %} 
+
 
 
 {% endblock %}

@@ -53,7 +53,8 @@
 }
 
 .cardf{
-    width:100%; max-width:480px; 
+    width:100%; 
+    max-width:480px; 
     border-radius:20px; 
     background-color:#ffffff;
 }
