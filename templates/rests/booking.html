@@ -1,24 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
-<br>
-    <h1>Бронювання</h1>
+<div class="card big-card1 shadow-sm rounded-4 overflow-hidden my-4">
+  <div class="row g-0">
+    <!-- Фото -->
+    <div class="col-md-5">
+      <img src="{{ rest.photo.url }}" class="img-fluid rounded-start card-imgg1" alt="">
+    </div>
 
-    <img src="{{ rest.photo.url }}" style="width: 300;">
-    <h3>Кімната №{{ rest.name }} ({{ rest.category }})</h3>
-    <p>{{rest.description }}</p>
-    <p>Ціна: {{ rest.price }} грн.</p>
+    <!-- Контент -->
+    <div class="col-md-7">
+      <div class="card-body1 d-flex flex-column">
+        <h3>{{ rest.name }} ({{ rest.category }})</h3>
+        <p>{{ rest.description }}</p>
+        <p><strong>Ціна: {{ rest.price }} грн.</strong></p>
 
-    <form method="POST">
-        {% csrf_token %}
-        <input type="hidden" name="rest_id" value="{{ rest.id }}">
+        <!-- Форма бронювання -->
+        <form method="POST" class="mt-auto">
+          {% csrf_token %}
+          <input type="hidden" name="rest_id" value="{{ rest.id }}">
 
-        <label for="start_date">Дата заїзду:</label>
-        <input type="date" name="start_date" id="start_date" value="{{ start_date }}" min="{% now 'Y-m-d' %}" required>
+          <label for="start_date">Дата заїзду:</label>
+          <input type="date" name="start_date" id="start_date" value="{{ start_date }}" min="{% now 'Y-m-d' %}" required>
 
-        <label for="end_date">Дата виїзду:</label>
-        <input type="date" name="end_date" id="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
-        
-        <button type="submit">Забронювати</button>
-    </form>
+          <label for="end_date">Дата виїзду:</label>
+          <input type="date" name="end_date" id="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
+
+          <button type="submit" class="btn btn-success mt-3 w-100">Забронювати</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 {% endblock %}

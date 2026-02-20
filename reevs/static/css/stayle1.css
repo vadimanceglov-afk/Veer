@@ -73,3 +73,42 @@
     background-color: #237d45;
 }
 
+.card-imgg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom-right-radius: 0px;
+}
+
+
+.cream-bg {
+  background-color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.big-card{
+  max-width: 900px;
+  margin: auto;
+}
+
+.rr{
+  padding-left: 1px;
+}
+
+/*---booking---*/
+.big-card1 {
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.card-imgg1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body1 {
+  display: flex;
+  flex-direction: column;
+}
