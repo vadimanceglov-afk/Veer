@@ -57,20 +57,20 @@
 }
 
 .button-tt {
-    background-color: #2A9652;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    padding: 8px 20px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition: 0.3s;
-    cursor: pointer;
+  background-color: #2A9652;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .button-tt:hover {
-    background-color: #237d45;
+  background-color: #237d45;
 }
 
 .card-imgg {
@@ -88,13 +88,14 @@
 }
 
 .big-card{
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
 }
 
 .rr{
   padding-left: 1px;
 }
+
 
 /*---booking---*/
 .big-card1 {
@@ -111,4 +112,23 @@
 .card-body1 {
   display: flex;
   flex-direction: column;
+}
+
+
+
+
+.vertical-card {
+    height: 400px;
+}
+
+.vertical-img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.book-btn{
+  position: absolute;
+  bottom: 10px;
 }
