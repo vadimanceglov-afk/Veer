@@ -124,4 +124,4 @@ def book_rest(request):
 
 
 def bt(request):
-    return HttpResponse("Це тимчасова сторінка")
+    return render(request=request, template_name="rests/bt.html", context={"bt": bt})

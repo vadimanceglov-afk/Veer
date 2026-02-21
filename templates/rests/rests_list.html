@@ -1,12 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Наші кімнати</h1>
+    <h1 class="text-center mb-5">Наш Відпочинок</h1>
     {% for rest in rests %}
-        <img src="{{ rest.photo.url }}">
-        <h3>Кімната №{{ rest.name }} {{ rest.category }} </h3>
-        <p>Тип: {{ rest.tep }}</p>
-        <p>Ціна: {{ rest.price }} грн</p>
-        <p><a href="#">Забронювати</a></p>
-        <hr>
+    <div class="cream-bg">
+        <div class="rr">
+            <div class="row g-5">
+                <div class="col-lg-10">
+                    <div class="card big-card shadow-sm rounded-4 ">
+                        <div class="row g-0">
+                            <div class="col-6 col-md-5"> 
+                                <img src="{{ rest.photo.url }}" class="card-imgg img-fluid rounded-start" alt=""> 
+                            </div> 
+                            <div class="col-6 col-md-5">
+                                <div class="card-body d-flex flex-column">
+                                    <div>
+                                        <h3>{{ rest.name }} </h3> 
+                                        <p class="card-text"><strong>Категорія:</strong> {{ rest.category }}</p> 
+                                        <p class="card-text"><strong>Тип:</strong> {{ rest.tep }}</p> 
+                                        <p class="card-text price">Ціна: {{ rest.price }} грн</p> 
+                                        <a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date }}"
+                                            class="btn btn-success book-btn">
+                                            Забронювати
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     {% endfor %}
 {% endblock %}

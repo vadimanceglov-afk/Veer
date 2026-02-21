@@ -45,9 +45,9 @@
                             <div class="card-body d-flex flex-column">
                                 <div>
                                     <h3>{{ rest.name }} </h3> 
-                                    <p class="card-text">Категорія: {{ rest.category }}</p> 
-                                    <p class="card-text">Тип: {{ rest.tep }}</p> 
-                                    <p class="card-text">Ціна: {{ rest.price }} грн</p> 
+                                    <p class="card-text"><strong>Категорія:</strong> {{ rest.category }}</p> 
+                                    <p class="card-text"><strong>Тип:</strong> {{ rest.tep }}</p> 
+                                    <p class="card-text price">Ціна: {{ rest.price }} грн</p> 
                                     <a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date }}"
                                         class="btn btn-success book-btn">
                                         Забронювати
@@ -61,6 +61,5 @@
         </div>
     </div>
 </div>
-
 {% endfor %} 
 {% endblock %}

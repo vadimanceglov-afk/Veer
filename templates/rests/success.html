@@ -1,8 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Бронювання успішно створено</h1>
-    <p>Місце: {{ booking.rest.name }} ({{ booking.rest.category }})</p>
-    <p>Тип відпочинку: {{ booking.rest.tep }}</p>
-    <p>Дати: {{ booking.start_time }} - {{ booking.end_time }}</p>
-    <p><a href="{% url 'main_page' %}">Повернутись на головну сторінку</a></p>
+<div class="container my-5">
+    <div class="crea">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-8">
+              <div class="card success-card shadow rounded-4 border-0 text-center p-4">
+                <div class="card-body">
+                  <h2 class="mb-3 text-success">
+                    <i class="bi bi-check-circle-fill"></i>
+                    Бронювання успішно створено
+                  </h2>
+                  <hr>
+                  <p class="mb-2 pf">
+                    <strong>Відпочинок:</strong>
+                    {{ booking.rest.name }}
+                  </p>
+                  <p class="mb-2 pf">
+                    <strong>Категорія:</strong>
+                    {{ booking.rest.category }}
+                  </p>
+                  <p class="mb-2 pf">
+                    <strong>Тип:</strong>
+                    {{ booking.rest.tep }}
+                  </p>
+                  <p class="mb-4 pf">
+                    <strong>Дати:</strong>
+                    {{ booking.start_time }} — {{ booking.end_time }}
+                  </p>
+                  <a href="{% url 'main_page' %}" class="btn btn-success px-4">
+                    На головну
+                  </a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

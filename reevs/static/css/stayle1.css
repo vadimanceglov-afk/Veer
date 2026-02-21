@@ -1,19 +1,17 @@
 .pt {
-    padding: 2%;
+  padding: 2%;
 }
 
 .hk{
-    max-width: 1290px;
-    margin: 30px auto;
-    padding: 15px 20px;
-
-    background: white;
-    border:  5px solid;
-    border-style: solid;
-    border-color: #2A9652;
-    border-radius: 16px;
-
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 1290px;
+  margin: 30px auto;
+  padding: 15px 20px;
+  background: white;
+  border:  5px solid;
+  border-style: solid;
+  border-color: #2A9652;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .dropbtn {
@@ -75,7 +73,7 @@
 
 .card-imgg {
   width: 100%;
-  height: 100%;
+  height: 279px;
   object-fit: cover;
   border-bottom-right-radius: 0px;
 }
@@ -88,14 +86,33 @@
 }
 
 .big-card{
-  max-width: 1200px;
+  max-width: 900px;
+  height: 280px;
   margin: auto;
 }
 
 .rr{
-  padding-left: 1px;
+  padding-left: 0px;
 }
 
+.card-body > div{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.card-text{
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.price{
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2A9652;
+  margin-top: 10px;
+}
 
 /*---booking---*/
 .big-card1 {
@@ -104,9 +121,10 @@
 }
 
 .card-imgg1 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 90%;
+  height: 90%;
+  object-fit:cover;
+  border-radius:12px;
 }
 
 .card-body1 {
@@ -115,20 +133,40 @@
 }
 
 
-
-/*
-.vertical-card {
-    height: 400px;
+strong{
+  color: black;
 }
 
-.vertical-img {
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-}
-*/
+
 .book-btn{
   position: absolute;
   bottom: 10px;
+}
+
+
+
+.pp{
+  padding: 15px;
+}
+
+.booking-form{
+  margin-top:150px;
+}
+
+.btn-center{
+    text-align:center;
+}
+
+.success-card {
+    max-width: 700px;
+    margin: auto;
+}
+
+.pf { 
+  font-size: 16px; 
+}
+
+.crea {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
