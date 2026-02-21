@@ -88,7 +88,7 @@
 }
 
 .big-card{
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -116,7 +116,7 @@
 
 
 
-
+/*
 .vertical-card {
     height: 400px;
 }
@@ -127,7 +127,7 @@
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
 }
-
+*/
 .book-btn{
   position: absolute;
   bottom: 10px;
