@@ -6,29 +6,31 @@
             <div class="col-lg-7 col-md-8">
               <div class="card success-card shadow rounded-4 border-0 text-center p-4">
                 <div class="card-body">
-                  <h2 class="mb-3 text-success">
-                    <i class="bi bi-check-circle-fill"></i>
+                    <i class="bi bi-check-circle-fill" style="font-size: 3rem; color: #2A9652;"></i>
+                  <h2 class="fw-bold mb-3 text-success">
                     Бронювання успішно створено
                   </h2>
-                  <hr>
-                  <p class="mb-2 pf">
+                  <hr class="divider-n">
+                  <p class="text-size-m">
                     <strong>Відпочинок:</strong>
                     {{ booking.rest.name }}
                   </p>
-                  <p class="mb-2 pf">
+                  <p class="text-size-m">
                     <strong>Категорія:</strong>
                     {{ booking.rest.category }}
                   </p>
-                  <p class="mb-2 pf">
+                  <p class="text-size-m">
                     <strong>Тип:</strong>
                     {{ booking.rest.tep }}
                   </p>
-                  <p class="mb-4 pf">
+                  <p class="text-size-m">
                     <strong>Дати:</strong>
+                  </p>
+                  <p class="text-size-m mb-4">
                     {{ booking.start_time }} — {{ booking.end_time }}
                   </p>
-                  <a href="{% url 'main_page' %}" class="btn btn-success px-4">
-                    На головну
+                  <a href="{% url 'main_page' %}" class="btn button-tt px-4">
+                    До пошуку
                   </a>
                 </div>
               </div>
@@ -36,5 +38,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

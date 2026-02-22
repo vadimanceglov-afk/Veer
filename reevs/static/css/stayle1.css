@@ -69,11 +69,12 @@
 
 .button-tt:hover {
   background-color: #237d45;
+  color: white;
 }
 
 .card-imgg {
   width: 100%;
-  height: 279px;
+  height: 284px;
   object-fit: cover;
   border-bottom-right-radius: 0px;
 }
@@ -87,7 +88,7 @@
 
 .big-card{
   max-width: 900px;
-  height: 280px;
+  height: 285px;
   margin: auto;
 }
 
@@ -101,7 +102,7 @@
   gap:8px;
 }
 
-.card-text{
+.card-text-p{
   font-size: 1.05rem;
   margin-bottom: 6px;
   color: #555;
@@ -111,7 +112,7 @@
   font-size: 1.3rem;
   font-weight: 700;
   color: #2A9652;
-  margin-top: 10px;
+  margin-top: 1.0px;
 }
 
 /*---booking---*/
@@ -158,8 +159,8 @@ strong{
 }
 
 .success-card {
-    max-width: 700px;
-    margin: auto;
+  max-width: 600px;
+  margin: auto;
 }
 
 .pf { 
@@ -169,4 +170,14 @@ strong{
 .crea {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.text-size-m{
+  font-size: 20px;
+}
+
+hr.divider-n{
+    border-top: 1px solid black;  
+    margin: 1.5rem 0;     
+    size: 4px;       
 }

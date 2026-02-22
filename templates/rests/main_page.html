@@ -29,7 +29,6 @@
     </form>
 </div>
 
-
 <h1 class="text-center mb-5">Знайдіть Відпочинок</h1>
 {% for rest in rests %} 
 <div class="cream-bg">
@@ -49,7 +48,7 @@
                                     <p class="card-text"><strong>Тип:</strong> {{ rest.tep }}</p> 
                                     <p class="card-text price">Ціна: {{ rest.price }} грн</p> 
                                     <a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date }}"
-                                        class="btn btn-success book-btn">
+                                        class="btn button-tt book-btn">
                                         Забронювати
                                     </a>
                                 </div>

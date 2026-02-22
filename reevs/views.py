@@ -12,8 +12,14 @@ def rests_list(request):
     }
     return render(request=request, template_name="rests/rests_list.html", context=context)
 
+
 def sef(request):
     return render(request=request, template_name="rests/sef.html")
+
+
+def bt(request):
+    return render(request=request, template_name="rests/bt.html", context={"bt": bt})
+
 
 def main_page(request):
     rests = Rest.objects.all()
@@ -121,7 +127,3 @@ def book_rest(request):
         )
 
         return render(request=request, template_name="rests/success.html", context={"booking": booking})
-
-
-def bt(request):
-    return render(request=request, template_name="rests/bt.html", context={"bt": bt})
