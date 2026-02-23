@@ -1,29 +1,69 @@
 {% extends 'base.html' %}
 {% block content %}
+
+
+
+
 <br>
-  <h1 class="text-center mb-5">Бронювання</h1>
+<h1 class="text-center mb-5">Бронювання</h1>
 
-    <div class="pp col-6 col-md-5">
-      <img src="{{ rest.photo.url }}" class="card-imgg1 rounded float-start">
-    </div>
-    <div>
-        <h3>{{ rest.name }} ({{ rest.category }})</h3>
-        <p class="card-text"><strong>Тип:</strong> {{ rest.tep }}</p> 
-        <p class="card-text">{{ rest.description }}</p>
-        <p class="card-text">Ціна: {{ rest.price }} грн.</p>
+<div class="booking-wrapper">
+
+  <!-- блок з фото і текстом -->
+  <div class="booking-row">
+    <div class="booking-img">
+      <img src="{{ rest.photo.url }}" alt="Відпочинок">
     </div>
 
+    <div class="booking-text">
+      <h2>{{ rest.name }} ({{ rest.category }})</h2>
+      <p><strong>Тип:</strong> {{ rest.tep }}</p>
+      <p>{{ rest.description }}</p>
+      <p class="price">{{ rest.price }} грн</p>
+    </div>
+  </div>
 
-
-
+  <!-- форма бронювання -->
   <form class="booking-form" method="POST">
       {% csrf_token %}
       <input type="hidden" name="rest_id" value="{{ rest.id }}">
+
       <label for="start_date">Дата заїзду:</label>
       <input type="date" name="start_date" id="start_date" value="{{ start_date }}" min="{% now 'Y-m-d' %}" required>
+
       <label for="end_date">Дата виїзду:</label>
       <input type="date" name="end_date" id="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
-      
-      <button type="submit" class="button-tt">Забронювати</button>
+
+      <button type="submit" class="book-btn">Забронювати</button>
   </form>
+
+</div>
+
+
+
+<div class="booking-card-w bg-light-subtle">
+  <div class="card-body">
+      <img src="{{ rest.photo.url }}">
+  </div>
+
+  <div class="booking-right">
+      <h2>{{ rest.name }} ({{ rest.category }})</h2>
+      <p><strong>Тип:</strong> {{ rest.tep }}</p>
+      <p>{{ rest.description }}</p>
+      <p class="price">{{ rest.price }} грн</p>
+
+      <form method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="rest_id" value="{{ rest.id }}">
+
+          <label>Дата заїзду</label>
+          <input type="date" name="start_date">
+
+          <label>Дата виїзду</label>
+          <input type="date" name="end_date">
+
+          <button>Забронювати</button>
+      </form>
+  </div>
+</div>
 {% endblock %}

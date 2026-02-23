@@ -5,20 +5,6 @@ header {
 
 }
 
-.highlight {
-    color: rgba(255, 255, 255, 0.7);  /* тусклий білий */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.highlight:hover,
-.highlight.active {
-    color: rgba(255, 255, 255, 1);   /* чистий білий */
-    text-decoration: none;
-}
-
-
-
 .ui {
     padding-right: 15px;
 }

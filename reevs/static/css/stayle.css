@@ -6,26 +6,6 @@
 }
 
 
-/* робимо body флекс-контейнером */
-body {
-    display: flex;
-    flex-direction: column;  /* вертикальний напрямок */
-    min-height: 100vh;       /* щоб займати всю висоту екрану */
-    margin: 0;               /* прибираємо стандартні відступи */
-}
-
-/* main займає весь доступний простір */
-main {
-    flex: 1;                 /* розтягується, щоб footer був внизу */
-}
-
-/* footer стилі*/
-footer {
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
 
 
 .card-title {

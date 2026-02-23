@@ -30,11 +30,14 @@
             {% if user.is_authenticated %}
             <div class="text-end">
                 <a href="{% url 'bt' %}" class="nav-link px-2 text-col me-2">
-                    <i class="bi bi-person-fill me-2"></i>Мої бронювання</a>
+                    <i class="bi bi-person-fill me-2"></i>
+                    Мої бронювання
+                </a>
             </div>
             <div class="text-end">
                 <a href="{% url 'logout' %}" class="btn-g me-3">
-                   Вийти <i class="bi bi-box-arrow-right"></i></a>
+                   Вийти <i class="bi bi-box-arrow-right"></i>
+                </a>
 
             </div>
             {% else %}
