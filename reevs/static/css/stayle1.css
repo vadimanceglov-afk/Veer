@@ -2,17 +2,7 @@
   padding: 2%;
 }
 
-.hk{
-  max-width: 1290px;
-  margin: 30px auto;
-  padding: 5px 20px;
-  background: white;
-  border:  6px solid;
-  border-style: solid;
-  border-color: #2A9652;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
+
 
 .booking-card{
   display:flex;
@@ -166,94 +156,69 @@ hr.divider-n{
     size: 4px;       
 }
 
-
-.w-card {
-  max-width: 90em;
-  flex-direction: row;
-  background-color: #696969;
-  border: 0;
-  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.18);
-  margin: 3em auto;
-}
-.card.dark {
-  color: #fff;
-}
-.card.card.bg-light-subtle .card-title {
-  color: dimgrey;
-}
-
-.w-card img {
-  max-width: 25%;
-  height: 284px;
-  margin: auto;
-  padding: 0.5em;
-  border-radius: 0.7em;
-}
-.w-card-body {
-  display: flex;
-  justify-content: space-between;
-}
-.text-section {
-  max-width: 60%;
-}
-
-.card.bg-light-subtle .cta-section .btn {
-  background-color: #898989;
-  border-color: #898989;
-}
-@media screen and (max-width: 475px) {
-  .card {
-    font-size: 0.9em;
-  }
+hr.divider-w{
+    border-top: 2px solid black;  
+    margin: 1.5rem 0;     
+    size: 100px;       
 }
 
 
 
 
 .booking-wrapper {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
 }
 
 /* flex для фото + текст */
 .booking-row {
-    display: flex;
-    gap: 30px;       /* відстань між фото і текстом */
-    align-items: flex-start; /* текст зверху */
+    display:flex;
+    gap:30px;
+    align-items:stretch;
     margin-bottom: 30px;
 }
 
 /* картинка */
 .booking-img img {
-    width: 350px;     /* ширина картинки */
-    height: 250px;    /* висота картинки */
-    object-fit: cover;
+    width: 500px;     /* ширина картинки */
+    height: 370px;    /* висота картинки */
     border-radius: 12px;
 }
 
 /* текст поруч */
 .booking-text h2 {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-size: 26px;
 }
 
 .booking-text p {
-    margin: 6px 0;
-    font-size: 16px;
+    margin: 5% 0;
+    font-size: 20px;
 }
 
-.price {
-    font-weight: 700;
-    color: #2A9652;
+.booking-text .price-booking{
+  font-size:35px;
 }
+
+.price-booking{
+  color: #2A9652;
+  position:relative;
+  top:30px;
+}
+
+
 
 /* форма бронювання */
 .booking-form {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    margin: 10px 0;
+    gap: 5px;
+}
+
+.booking-form .button-tt{
+  flex-direction: column;
 }
 
 .booking-form input {
@@ -262,9 +227,49 @@ hr.divider-n{
     border: 1px solid #ccc;
 }
 
+.card-box{
+  max-width:600px;
+  margin:40px auto;
+  padding:25px;
+
+  background:white;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.hk{
+  max-width: 1290px;
+  margin: 30px auto;
+  padding: 5px 20px;
+  background: white;
+  border:  6px solid;
+  border-style: solid;
+  border-color: #2A9652;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
 .text-green{
   color: #237d45;
-  margin-top: 35px;
-  margin-bottom: 15px;
+  margin: 50px 0;
   text-align: center;
+}
+
+.input-box{
+  display:flex;
+  align-items:center;
+  border:1px solid #ccc;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.input-box span{
+  background:#f3f3f3;
+  padding:10px 14px;
+  font-size:14px;
+}
+
+.input-box input{
+  border:none;
+  padding:10px;
+  outline:none;
 }
