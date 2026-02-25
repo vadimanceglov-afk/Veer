@@ -18,7 +18,17 @@ def sef(request):
 
 
 def bt(request):
-    return render(request=request, template_name="rests/bt.html", context={"bt": bt})
+    if request.user.is_authenticated:
+        bookings = Booking.objects.filter(user = request.user)
+    else:
+        bookings=[]
+
+    context = {
+        "bookings": bookings,
+    }
+    
+    return render(request=request, template_name="rests/bt.html", context=context)
+
 
 
 def main_page(request):

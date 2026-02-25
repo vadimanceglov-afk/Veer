@@ -6,5 +6,11 @@
 <div class="btn-center">
     <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="btn button-tt">Забронювати</a>
 </div>
-
+{% for booking in bookings %}
+    Назва кімнати: {{ booking.rest.name }}
+    Дати: з {{ booking.start_time }} по {{ booking.end_time }}
+    Гостей: {{ booking.guests_count }}
+{% empty %}
+    Немає бронювань
+{% endfor %}
 {% endblock %}
