@@ -2,7 +2,9 @@
   padding: 2%;
 }
 
-
+.n{
+  margin: 50px 0;
+}
 
 .booking-card{
   display:flex;
@@ -120,6 +122,7 @@ strong{
 
 
 
+
 .pp{
   padding: 15px;
 }
@@ -212,12 +215,13 @@ hr.divider-w{
 
 /* форма бронювання */
 .booking-form {
-    display: flex;
+    display: grid;
     margin: 10px 0;
     gap: 5px;
 }
 
 .booking-form .button-tt{
+  margin: 10px 0;
   flex-direction: column;
 }
 
@@ -228,7 +232,8 @@ hr.divider-w{
 }
 
 .card-box{
-  max-width:600px;
+  width:300px;
+  height: 300px;
   margin:40px auto;
   padding:25px;
 
@@ -272,4 +277,22 @@ hr.divider-w{
   border:none;
   padding:10px;
   outline:none;
+}
+
+.booking-layout{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:40px;
+}
+
+.booking-left{
+  text-align:left;
+}
+
+.booking-left h2{
+  margin-left:0 !important;
+  padding-left:0 !important;
+  text-align:left;
+  margin-bottom:10px;
 }

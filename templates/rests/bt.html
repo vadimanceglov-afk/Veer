@@ -1,16 +1,46 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="text-center mb-5">Цю сторінку розробник поки ще не встиг доробити :/</h1>
 
-<h3 class="text-center mb-5">Безкоштовно за бронювати відпочинок</h3>
-<div class="btn-center">
-    <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="btn button-tt">Забронювати</a>
-</div>
+<h1 class="fw-bold text-green text-center n">Ваші бронювання</h1>
+
 {% for booking in bookings %}
-    Назва кімнати: {{ booking.rest.name }}
-    Дати: з {{ booking.start_time }} по {{ booking.end_time }}
-    Гостей: {{ booking.guests_count }}
+<div class="cream-bg">
+    <div class="rr">
+        <div class="row g-5">
+            <div class="col-lg-10">
+                <div class="card big-card shadow-sm rounded-4 ">
+                    <div class="row g-0">
+                        <div class="col-6 col-md-5"> 
+                            <img src="{{ booking.rest.photo.url }}" class="card-imgg img-fluid rounded-start" alt=""> 
+                        </div> 
+                        <div class="col-6 col-md-5">
+                            <div class="card-body d-flex flex-column">
+                                <h3>{{ booking.rest.name }} </h3> 
+                                <p class="card-text"><strong>Категорія:</strong> {{ booking.rest.category }}</p> 
+                                <p class="card-text"><strong>Тип:</strong> {{booking.rest.tep }}</p> 
+                                <p class="card-text price">Ціна: {{ booking.rest.price }} грн</p>
+                                <h5 class="text-green book-btn">Заброньовано</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% empty %}
-    Немає бронювань
+    <h1 class="text-center mb-5">Тут будуть зявлятись відпочинок який ви вже забронювали</h1>
+
+    <h3 class="text-center mb-5">Отримати подарунок від нашого сайту!!</h3>
+    <div class="btn-center">
+        <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="btn button-tt">Отримати</a>
+    </div>
 {% endfor %}
+<hr class=" centered-hr">
+<br>
+<h3 class="text-center mb-5">Отримати подарунок від нашого сайту!!</h3>
+<div class="btn-center">
+    <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="btn button-tt">Отримати</a>
+</div>
 {% endblock %}
