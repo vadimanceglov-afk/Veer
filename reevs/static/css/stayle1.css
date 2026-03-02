@@ -171,7 +171,7 @@ hr.divider-w{
 .booking-wrapper {
     max-width: 1000px;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 /* flex для фото + текст */
@@ -295,4 +295,10 @@ hr.divider-w{
   padding-left:0 !important;
   text-align:left;
   margin-bottom:10px;
+}
+
+.booking-msg{
+    margin-top:20px;
+    font-weight:bold;
+    color:black
 }

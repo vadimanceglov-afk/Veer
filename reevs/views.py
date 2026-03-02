@@ -85,7 +85,6 @@ def main_page(request):
 
 
 def book_rest(request):
-
     if request.method == "GET":
         rest_id = request.GET.get("rest_id")
         start_date = request.GET.get("start_date")
@@ -98,6 +97,10 @@ def book_rest(request):
             "start_date": start_date,
             "end_date": end_date
         }
+
+        if not request.user.is_authenticated:
+            context["error"] = "Щоб забронювати відпочинок, зареєструйтесь або увійдіть в акаунт."
+            return render(request, "rests/booking.html", context)
 
         return render(request, "rests/booking.html", context)
 
@@ -113,20 +116,25 @@ def book_rest(request):
         start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
         end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
 
+
+
         context = {
             "rest": rest,
             "start_date": start_date,
             "end_date": end_date
         }
 
+
+        
         # перевіряємо коректність дат
         if start_date > end_date:
             return render(request=request, template_name="rests/booking.html", context=context)
         
+        
         # перевіряємо чи цей номер уже заброньований кимось
         if Booking.objects.filter(rest=rest, start_time__lt=end_date, end_time__gt=start_date).exists():
             return render(request=request, template_name="rests/booking.html", context=context)
-
+    
         # створюємо нове бронювання
         booking = Booking.objects.create(
             user=request.user,
