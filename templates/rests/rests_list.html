@@ -5,7 +5,7 @@
     <div class="cream-bg">
         <div class="rr">
             <div class="row g-5">
-                <div class="col-lg-10">
+                <div class="col-lg-8">
                     <div class="card big-card shadow-sm rounded-4 ">
                         <div class="row g-0">
                             <div class="col-6 col-md-5"> 
@@ -20,7 +20,7 @@
                                         <p class="card-text price">Ціна: {{ rest.price }} грн</p> 
                                         <a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date }}"
                                             class="btn btn-success book-btn">
-                                            Забронювати
+                                            Переглянути
                                         </a>
                                     </div>
                                 </div>
@@ -32,4 +32,9 @@
         </div>
     </div>
     {% endfor %}
+    <div class="text-center">
+        <br>
+        <p class="fw-bold">Що це за кнопка?</p>
+        <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="btn button-tt n">кнопка</a>
+    </div>
 {% endblock %}

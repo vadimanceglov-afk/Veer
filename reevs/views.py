@@ -98,9 +98,6 @@ def book_rest(request):
             "end_date": end_date
         }
 
-        if not request.user.is_authenticated:
-            context["error"] = "Щоб забронювати відпочинок, зареєструйтесь або увійдіть в акаунт."
-            return render(request, "rests/booking.html", context)
 
         return render(request, "rests/booking.html", context)
 
@@ -133,6 +130,7 @@ def book_rest(request):
         
         # перевіряємо чи цей номер уже заброньований кимось
         if Booking.objects.filter(rest=rest, start_time__lt=end_date, end_time__gt=start_date).exists():
+            context["error"] = "Цей відпочинок вже заброньований на вибрані дати."
             return render(request=request, template_name="rests/booking.html", context=context)
     
         # створюємо нове бронювання

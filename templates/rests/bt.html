@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-
+<div class="text-center">
+    <i class="bi bi-person-circle me-2" style="font-size: 5rem;"></i>
+    <h2 class="fw-bold">{{ request.user.username }}</h2>
+</div>
 <h1 class="fw-bold text-green text-center n">Ваші бронювання</h1>
 
 <div class="cream-bg">
@@ -23,7 +27,7 @@
                                     <h3><strong>{{ booking.rest.name }}</strong></h3>
                                     <p class="card-text"><strong>Категорія:</strong> {{ booking.rest.category }}</p>
                                     <p class="card-text"><strong>Тип:</strong> {{ booking.rest.tep }}</p>
-                                    <p class="card-text price">Ціна: {{ booking.rest.price }} грн</p>
+                                    <p class="card-text"><strong>{{ booking.start_time }} — {{ booking.end_time }}</strong></p>
                                     <h5 class="text-green book-text">Заброньовано</h5>
                                 </div>
                             </div>
@@ -34,9 +38,16 @@
             </div>
 
             {% empty %}
-
+            
             <h1 class="text-center mb-5">Тут будуть з'являтись відпочинки які ви забронювали</h1>
-
+            <hr>
+            <div class="text-center">
+                <a href="/" class="n-img">
+                    <img src="{% static 'img/d0.png' %}" alt="Logo" width="200">
+                </a>
+            </div>
+            <h2 class="text-center">Отримайте подарунок від нашого сайту!!</h2>
+            <br>
             <div class="btn-center">
                 <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="btn button-tt">Отримати</a>
             </div>

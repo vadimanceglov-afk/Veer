@@ -29,7 +29,46 @@
     </form>
 </div>
 
-<h1 class="text-center mb-5">Знайдіть Відпочинок</h1>
+<div class="hk mb-5 p-3 bg-light rounded shadow-sm">
+  <form method="post" action="{% url 'main_page' %}" class="row g-2 align-items-end">
+    {% csrf_token %}
+
+    <div class="col-sm">
+      <label for="start_date" class="form-label">Заїзд</label>
+      <input type="date" class="form-control" name="start_date" value="{{ start_date }}" min="{% now 'Y-m-d' %}" required>
+    </div>
+
+    <div class="col-sm">
+      <label for="end_date" class="form-label">Виїзд</label>
+      <input type="date" class="form-control" name="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
+    </div>
+
+    <div class="col-sm">
+      <label class="form-label">Ціна від</label>
+      <input type="number" class="form-control" name="min_price" value="{{ min_price }}" placeholder="від" min="1">
+    </div>
+
+    <div class="col-sm">
+      <label class="form-label">Ціна до</label>
+      <input type="number" class="form-control" name="max_price" value="{{ max_price }}" placeholder="до" min="1">
+    </div>
+
+    <div class="col-sm">
+      <label class="form-label">Тип</label>
+      <select name="tep" class="form-select">
+        <option value="">Будь-який</option>
+        <option value="active" {% if tep == 'active' %}selected{% endif %}>Активний</option>
+        <option value="passive" {% if tep == 'passive' %}selected{% endif %}>Пасивний</option>
+        <option value="mixed" {% if tep == 'mixed' %}selected{% endif %}>Змішаний</option>
+      </select>
+    </div>
+
+    <div class="col-sm-auto">
+      <button type="submit" class="btn btn-success w-100">Фільтрувати</button>
+    </div>
+  </form>
+</div>
+<h1 class="text-center mb-5 text-green fw-bold">Знайдіть Відпочинок</h1>
 {% for rest in rests %} 
 <div class="cream-bg">
     <div class="rr">
@@ -49,7 +88,7 @@
                                     <p class="card-text price">Ціна: {{ rest.price }} грн</p> 
                                     <a href="{% url 'booking' %}?rest_id={{ rest.id }}&start_date={{ start_date }}&end_date={{ end_date }}"
                                         class="btn button-tt book-btn">
-                                        Забронювати
+                                        Переглянути
                                     </a>
                                 </div>
                             </div>

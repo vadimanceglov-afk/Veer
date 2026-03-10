@@ -3,7 +3,11 @@
 }
 
 .n{
-  margin: 50px 0;
+  margin: 10px 0;
+}
+
+.n-img{
+  margin: 10px 0;
 }
 
 .booking-card{
@@ -49,7 +53,7 @@
 }
 
 .card-imgg {
-  width: 100%;
+  width: 200%;
   height: 284px;
   object-fit: cover;
   border-bottom-right-radius: 0px;
@@ -73,11 +77,7 @@
   padding-left: 0px;
 }
 
-.card-body > div{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
+
 
 .card-text-p{
   font-size: 1.05rem;
@@ -306,9 +306,6 @@ hr.divider-w{
     font-weight:bold;
     color:black
 }
-
-
-
 
 .cut-text h3{
   white-space: nowrap;
