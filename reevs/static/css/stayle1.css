@@ -1,3 +1,35 @@
+.hk{
+  max-width:1290px;
+  margin:40px auto;
+  padding:25px 30px;
+
+  background:white;
+
+  border-radius:18px;
+  border:2px solid transparent;
+
+  background-clip: padding-box;
+
+  box-shadow:0 5px 5px rgba(0,0,0,0.1);
+}
+
+.hk::before{
+  content:"";
+  position:absolute;
+}
+
+
+.hk input,
+.hk select{
+height:55px;
+border-radius:10px;
+}
+
+.hk button{
+height:55px;
+border-radius:10px;
+font-weight:600;
+}
 .pt {
   padding: 2%;
 }
@@ -246,17 +278,7 @@ hr.divider-w{
   box-shadow:0 8px 25px rgba(0,0,0,0.15);
 }
 
-.hk{
-  max-width: 1290px;
-  margin: 30px auto;
-  padding: 5px 20px;
-  background: white;
-  border:  6px solid;
-  border-style: solid;
-  border-color: #2A9652;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
+
 .text-green{
   color: #237d45;
   margin: 50px 0;
@@ -312,4 +334,8 @@ hr.divider-w{
   width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.hk button{
+height:50px;
 }

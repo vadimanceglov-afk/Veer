@@ -2,73 +2,58 @@
 
 {% load static %}
 {% block content %}
-<div class="hk mb-5">
-    <form method="post" action="{% url 'main_page' %}">
-        {% csrf_token %}
 
-        <label for="start_date">Дата заїзду</label>
-        <input type="date" name="start_date" value="{{ start_date }}" min="{% now 'Y-m-d' %}" required>
-
-        <label for="end_date">Дата виїзду</label>
-        <input type="date" name="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
-
-        <label for="min_price">Ціна від: </label>
-        <input type="number" name="min_price" value="{{ min_price }}" placeholder="від" min="1">
-        
-        <label for="max_price">Ціна до: </label>
-        <input type="number" name="max_price" value="{{ max_price }}" placeholder="до" min="1">
-
-            <label>Тип</label>
-            <select name="tep">
-                <option value="active">Активний</option>
-                <option value="passive">Пасивний</option>
-                <option value="mixed">Змішаний</option>
-            </select>
-
-        <button type="submit" class="button-tt">Фільтрувати</button>
-    </form>
-</div>
-
-<div class="hk mb-5 p-3 bg-light rounded shadow-sm">
-  <form method="post" action="{% url 'main_page' %}" class="row g-2 align-items-end">
-    {% csrf_token %}
-
-    <div class="col-sm">
-      <label for="start_date" class="form-label">Заїзд</label>
-      <input type="date" class="form-control" name="start_date" value="{{ start_date }}" min="{% now 'Y-m-d' %}" required>
-    </div>
-
-    <div class="col-sm">
-      <label for="end_date" class="form-label">Виїзд</label>
-      <input type="date" class="form-control" name="end_date" value="{{ end_date }}" min="{% now 'Y-m-d' %}" required>
-    </div>
-
-    <div class="col-sm">
-      <label class="form-label">Ціна від</label>
-      <input type="number" class="form-control" name="min_price" value="{{ min_price }}" placeholder="від" min="1">
-    </div>
-
-    <div class="col-sm">
-      <label class="form-label">Ціна до</label>
-      <input type="number" class="form-control" name="max_price" value="{{ max_price }}" placeholder="до" min="1">
-    </div>
-
-    <div class="col-sm">
-      <label class="form-label">Тип</label>
-      <select name="tep" class="form-select">
-        <option value="">Будь-який</option>
-        <option value="active" {% if tep == 'active' %}selected{% endif %}>Активний</option>
-        <option value="passive" {% if tep == 'passive' %}selected{% endif %}>Пасивний</option>
-        <option value="mixed" {% if tep == 'mixed' %}selected{% endif %}>Змішаний</option>
-      </select>
-    </div>
-
-    <div class="col-sm-auto">
-      <button type="submit" class="btn btn-success w-100">Фільтрувати</button>
-    </div>
-  </form>
-</div>
 <h1 class="text-center mb-5 text-green fw-bold">Знайдіть Відпочинок</h1>
+
+<div class="hk mb-3">
+<form method="post" action="{% url 'main_page' %}" class="row g-2 align-items-stretch">
+{% csrf_token %}
+
+<div class="col-sm form-floating">
+  <input type="date" class="form-control" id="start_date" name="start_date"
+         value="{{ start_date }}" min="{% now 'Y-m-d' %}">
+  <label for="start_date">Дата заїзду</label>
+</div>
+
+<div class="col-sm form-floating">
+  <input type="date" class="form-control" id="end_date" name="end_date"
+         value="{{ end_date }}" min="{% now 'Y-m-d' %}">
+  <label for="end_date">Дата виїзду</label>
+</div>
+
+<div class="col-sm form-floating">
+  <input type="number" class="form-control" id="min_price" name="min_price"
+         value="{{ min_price }}" placeholder="від">
+  <label for="min_price">Ціна від:</label>
+</div>
+
+<div class="col-sm form-floating">
+  <input type="number" class="form-control" id="max_price" name="max_price"
+         value="{{ max_price }}" placeholder="до">
+  <label for="max_price">Ціна до:</label>
+</div>
+
+<div class="col-sm form-floating">
+  <select name="tep" class="form-select">
+    <option value="active" {% if tep == 'active' %}selected{% endif %}>Активний</option>
+    <option value="passive" {% if tep == 'passive' %}selected{% endif %}>Пасивний</option>
+    <option value="mixed" {% if tep == 'mixed' %}selected{% endif %}>Змішаний</option>
+  </select>
+  <label for="floatingSelect">тип</label>
+</div>
+
+
+<div class="col-sm-auto">
+    <button type="submit" class="button-tt w-700">
+        Фільтрувати
+    </button>
+</div>
+
+</form>
+</div>
+
+
+<br>
 {% for rest in rests %} 
 <div class="cream-bg">
     <div class="rr">
