@@ -1,9 +1,9 @@
 .hk{
   max-width:1290px;
   margin:40px auto;
-  padding:25px 30px;
+  padding:15px 20px;
 
-  background:white;
+  background:rgb(246, 246, 246);
 
   border-radius:18px;
   border:2px solid transparent;
@@ -13,10 +13,6 @@
   box-shadow:0 5px 5px rgba(0,0,0,0.1);
 }
 
-.hk::before{
-  content:"";
-  position:absolute;
-}
 
 
 .hk input,
@@ -338,4 +334,18 @@ hr.divider-w{
 
 .hk button{
 height:50px;
+}
+
+.search-hero{
+    background: #2A9652;
+    background-size:cover;
+    background-position:center;
+    padding:50px 20px;
+
+}
+
+.text-white{
+  color: white;
+  margin: 5px 0;
+  text-align: center;
 }

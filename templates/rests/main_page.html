@@ -2,9 +2,9 @@
 
 {% load static %}
 {% block content %}
-
-<h1 class="text-center mb-5 text-green fw-bold">Знайдіть Відпочинок</h1>
-
+<section class="search-hero">
+<h1 class="text-center mb-1 text-white fw-bold">Знайдіть ідеальний відпочинок для себе</h1>
+<br>
 <div class="hk mb-3">
 <form method="post" action="{% url 'main_page' %}" class="row g-2 align-items-stretch">
 {% csrf_token %}
@@ -51,6 +51,8 @@
 
 </form>
 </div>
+</section>
+
 
 
 <br>
