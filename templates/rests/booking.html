@@ -23,9 +23,14 @@
 
 <div class="booking-layout">
 
+
   <!-- ЛІВА ЧАСТИНА -->
   <div class="booking-left">
+{% if is_booked %}
+    <h2 class="fw-bold text-green">Заброньовано</h2>
+{% else %}
     <h2 class="fw-bold text-green">Забронюйте скоріж відпочинок</h2>
+{% endif %}
     <br>
     <p>Оплату проводити вам не треба бо розробник ще не зробив таку функцію</p>
     <p class="fw-bold">Щоб забронювати відпочинок увійдіть в акаунт або зареєструйтесь</p>

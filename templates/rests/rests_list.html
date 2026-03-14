@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1 class="text-green fw-bold mb-6">Відпочинок</h1>
+<section class="search-hero">
+        <h1 class="text-white fw-bold">Відпочинок</h1>
+        <br>
+</section>
+<br>
     {% for rest in rests %}
     <div class="cream-bg">
         <div class="rr">
@@ -15,6 +19,7 @@
                                 <div class="card-body d-flex flex-column">
                                     <div class="cut-text">
                                         <h3><strong>{{ rest.name }}</strong></h3>
+                                        <br>
                                         <p class="card-text"><strong>Категорія:</strong> {{ rest.category }}</p> 
                                         <p class="card-text"><strong>Тип:</strong> {{ rest.tep }}</p> 
                                         <p class="card-text price">Ціна: {{ rest.price }} грн</p> 

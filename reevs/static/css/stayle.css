@@ -87,3 +87,8 @@
 .carousel-item {
     height: 35rem;
 }
+
+body{
+overflow-x:hidden;
+}
+

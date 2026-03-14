@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Rest, Booking
 from django.db.models import Q
 from datetime import datetime
-from django.http import HttpResponse
+from django.contrib import messages
 
 # функція придставлення списку всіх кімнат
 def rests_list(request):
@@ -52,6 +52,9 @@ def main_page(request):
         min_price = request.POST.get("min_price")
         max_price = request.POST.get("max_price")
 
+        if not start_date or not end_date:
+            messages.error(request, "Будь ласка введіть дати заїзду та виїзду")
+
         if start_date and end_date:
             # конвертуємо дати у datetime.date
             start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
@@ -87,17 +90,15 @@ def main_page(request):
 def book_rest(request):
     if request.method == "GET":
         rest_id = request.GET.get("rest_id")
-        start_date = request.GET.get("start_date")
-        end_date = request.GET.get("end_date")
 
         rest = Rest.objects.get(id=rest_id)
 
+        is_booked = Booking.objects.filter(rest=rest).exists()
+
         context = {
             "rest": rest,
-            "start_date": start_date,
-            "end_date": end_date
+            "is_booked": is_booked
         }
-
 
         return render(request, "rests/booking.html", context)
 
@@ -110,9 +111,6 @@ def book_rest(request):
         rest = Rest.objects.get(id=rest_id)
 
         # конвертуємо дати у datetime.date
-        start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
-        end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
-
 
 
         context = {
@@ -120,6 +118,14 @@ def book_rest(request):
             "start_date": start_date,
             "end_date": end_date
         }
+
+
+        # конвертуємо дати у datetime.date
+        if not start_date or not end_date:
+            return render(request, "rests/booking.html", context)
+
+        start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
+        end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
 
 
         
@@ -130,8 +136,7 @@ def book_rest(request):
         
         # перевіряємо чи цей номер уже заброньований кимось
         if Booking.objects.filter(rest=rest, start_time__lt=end_date, end_time__gt=start_date).exists():
-            context["error"] = "Цей відпочинок вже заброньований на вибрані дати."
-            return render(request=request, template_name="rests/booking.html", context=context)
+            return render(request, "rests/booking.html", context)
     
         # створюємо нове бронювання
         booking = Booking.objects.create(
