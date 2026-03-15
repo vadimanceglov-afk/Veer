@@ -3,15 +3,10 @@
   margin:40px auto;
   padding:15px 20px;
 
-  background:rgb(246, 246, 246);
-
+  background:rgb(246,246,246);
   border-radius:18px;
-  border:2px solid transparent;
-
-  background-clip: padding-box;
 
   box-shadow:0 5px 5px rgba(0,0,0,0.1);
-
 }
 
 
@@ -341,7 +336,9 @@ height:50px;
     background: #2A9652;
     background-size:cover;
     background-position:center;
-    padding:50px 20px;
+    padding-top:40px;
+    padding:60px 20px;
+    margin-bottom: 50px;
 
 }
 
