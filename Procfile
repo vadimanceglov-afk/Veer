@@ -1,0 +1,1 @@
+web: gunicorn veer_system.wsgi:application
