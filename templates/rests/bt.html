@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<br>
 <div class="text-center">
     <i class="bi bi-person-circle me-2" style="font-size: 5rem;"></i>
     <h2 class="fw-bold">{{ request.user.username }}</h2>
@@ -40,18 +41,26 @@
 
             {% empty %}
             
-            <h1 class="text-center mb-5">Тут будуть з'являтись відпочинки які ви забронювали</h1>
-            <div class="text-center">
-                <a href="/" class="n-img">
-                    <img src="{% static 'img/d0.png' %}" alt="Logo" width="200">
-                </a>
+            <h3 class="text-center mb-5">Тут будуть з'являтись відпочинки які ви забронювали</h3>
+            <div class="container d-flex justify-content-center mt-5">
+                <div class="card text-center shadow-lg p-4" style="max-width: 350px;  width: 100%; border-radius: 20px; ">
+                    
+                    <div class="card-body">
+                        
+                        <a href="/" class="n-img d-block">
+                            <img src="{% static 'img/d0.png' %}" alt="Logo" width="200">
+                        </a>
+                    
+                        <h2 class="card-title mb-3">
+                            Отримайте подарунок від нашого сайту!!
+                        </h2>
+                    
+                        <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="btn button-tt">Отримати</a>
+                    
+                    </div>
+                
+                </div>
             </div>
-            <h2 class="text-center">Отримайте подарунок від нашого сайту!!</h2>
-            <br>
-            <div class="btn-center">
-                <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="btn button-tt">Отримати</a>
-            </div>
-            <hr class="divider-w">
 
 
             {% endfor %}

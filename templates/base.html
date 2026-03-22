@@ -12,9 +12,30 @@
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/stayle1.css' %}">
     <link rel="stylesheet" href="{% static 'css/reew.css' %}">
+    
 
     <title>Booking Rest</title>
 </head>
+
+<script id="sticky-hk">
+document.addEventListener("DOMContentLoaded", function() {
+    const hk = document.querySelector(".hk");
+    const hero = document.querySelector(".search-hero");
+
+    if (!hk || !hero) return;
+
+    // Запускаємо скрол
+    window.addEventListener("scroll", function() {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+
+        if (heroBottom <= 90) { // 90px = top header
+            hk.classList.add("fixed");
+        } else {
+            hk.classList.remove("fixed");
+        }
+    });
+});
+</script>
 
     <body>
         <header>

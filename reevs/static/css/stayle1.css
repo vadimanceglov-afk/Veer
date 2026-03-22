@@ -1,14 +1,28 @@
 .hk{
   max-width:1290px;
-  margin:40px auto;
-  padding:15px 20px;
+  margin: 40px auto; /* нормальний відступ всередині hero */
+  padding: 15px 20px;
 
-  background:rgb(246,246,246);
-  border-radius:18px;
+  background: rgb(246,246,246);
+  border-radius: 18px;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
 
-  box-shadow:0 5px 5px rgba(0,0,0,0.1);
+
+  z-index: 1000;
+
 }
 
+/* коли прилипає */
+.hk.fixed {
+  position: fixed;
+  top: 90px; /* відступ від шапки */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1290px;
+  margin: 0; /* прибираємо margin щоб не “підстрибувало” */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 
 
 .hk input,
