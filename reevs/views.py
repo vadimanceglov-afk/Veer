@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Rest, Booking
 from django.db.models import Q
 from datetime import datetime
@@ -103,6 +103,9 @@ def book_rest(request):
         return render(request, "rests/booking.html", context)
 
     elif request.method == "POST":
+        if not request.user.is_authenticated:
+            messages.error(request, "Щоб забронювати, потрібно увійти в акаунт")
+            return redirect('login')
         rest_id = request.POST.get("rest_id")
         start_date = request.POST.get("start_date")
         end_date = request.POST.get("end_date")
