@@ -1,1 +1,1 @@
-web: gunicorn veer_system.wsgi:application
+web: gunicorn veer_system.wsgi
