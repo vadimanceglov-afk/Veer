@@ -27,7 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'refreshing-dedication-production-9749.up.railway.app']
 
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://refreshing-dedication-production-9749.up.railway.app",
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -151,3 +153,4 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
